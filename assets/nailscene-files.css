@@ -1,0 +1,185 @@
+/* NailScene — Scene Files */
+
+.nailscene-files {
+  padding: 65px 5% 85px;
+  background: #f1e9ff;
+  color: #55437d;
+}
+
+.nailscene-files__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nailscene-files__heading {
+  text-align: center;
+  margin-bottom: 38px;
+  font-family: 'Space Mono', monospace;
+}
+
+.nailscene-files__heading h2 {
+  margin: 0 0 10px;
+  font-family: inherit;
+  font-size: clamp(1.6rem, 2vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #55437d;
+}
+
+.nailscene-files__heading p {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+}
+
+.nailscene-files__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.nailscene-file {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 5px;
+  border: 2px solid #6953ba;
+  border-radius: 5px;
+  background: #fefaff;
+  box-shadow: 4px 4px 0 #c0a8eb;
+}
+
+.nailscene-file__titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid #6953ba;
+  background: linear-gradient(180deg, #f8eaff, #ddbbee 50%, #c0a8eb);
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+}
+
+.nailscene-file__details {
+  padding: 18px 14px 12px;
+  font-family: 'Space Mono', monospace;
+}
+
+.nailscene-file__number {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nailscene-file__details h3 {
+  margin: 0 0 8px;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.nailscene-file__details h3 a {
+  color: #55437d;
+  text-decoration: none;
+}
+
+.nailscene-file__status {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.nailscene-file__status span {
+  color: #23865a;
+}
+
+.nailscene-file__image {
+  display: block;
+  margin: 0 10px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #e9d9fa;
+}
+
+.nailscene-file__image img,
+.nailscene-file__image svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.nailscene-file:hover .nailscene-file__image img {
+  transform: scale(1.04);
+}
+
+.nailscene-file__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px 10px 10px;
+  margin-top: auto;
+  font-family: 'Space Mono', monospace;
+}
+
+.nailscene-file__footer p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nailscene-file__footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #6953ba;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #f8eaff, #ddbbee);
+  color: #55437d;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nailscene-file__footer a:hover {
+  background: #c0a8eb;
+}
+
+.nailscene-files__empty {
+  grid-column: 1 / -1;
+  padding: 45px 20px;
+  border: 1px dashed #6953ba;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 989px) {
+  .nailscene-files__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .nailscene-files {
+    padding: 45px 20px 65px;
+  }
+
+  .nailscene-files__heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .nailscene-files__grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nailscene-file__image img {
+    transition: none;
+  }
+}

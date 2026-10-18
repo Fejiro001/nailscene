@@ -3709,6 +3709,46 @@ details-disclosure > details {
   }
 }
 
+/* NailScene — Header alignment */
+
+@media screen and (min-width: 990px) {
+  .nailscene-header .header {
+    max-width: 1500px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 10px 5%;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: clamp(3rem, 5vw, 8rem);
+  }
+
+  .nailscene-header .header__heading {
+    justify-self: start;
+    margin: 0;
+  }
+
+  .nailscene-header .header__inline-menu {
+    justify-self: center;
+    margin: 0;
+  }
+
+  .nailscene-header .header__inline-menu .list-menu--inline {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 2.5vw, 4rem);
+  }
+
+  .nailscene-header .header__menu-item {
+    padding-inline: 0;
+  }
+
+  .nailscene-header .header__icons {
+    justify-self: end;
+    gap: 1rem;
+  }
+}
+
 /* NailScene — Retro Window Title Bar */
 
 .nailscene-titlebar {

@@ -1,0 +1,129 @@
+{{ 'nailscene-hero.css' | asset_url | stylesheet_tag }}
+
+{% assign featured_collection = section.settings.featured_collection %}
+
+<section
+  class="nailscene-hero"
+  style="--hero-background: url('{{ 'nailscene-chrome.png' | asset_url }}');"
+>
+  <div class="nailscene-hero__inner">
+    <div class="nailscene-hero__content">
+      <p class="nailscene-hero__eyebrow">
+        SCENE_001
+        <span>// THE FIRST FILES</span>
+      </p>
+
+      <h2 class="nailscene-hero__heading">
+        YOUR SCENE.<br>
+        YOUR SET.
+      </h2>
+
+      <p class="nailscene-hero__description">
+        {{ section.settings.description }}
+      </p>
+
+      {% if featured_collection != blank %}
+        <a
+          href="{{ featured_collection.url }}"
+          class="nailscene-hero__button"
+        >
+          EXPLORE FILES
+          <span aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="nailscene-hero__visual">
+      <div class="nailscene-hero__window">
+        <div class="nailscene-hero__window-bar">
+          <span>●</span>
+          <span>●</span>
+          <span>○</span>
+        </div>
+
+        <div class="nailscene-hero__window-image">
+          {% if section.settings.hero_image != blank %}
+            {{
+              section.settings.hero_image
+              | image_url: width: 1200
+              | image_tag: loading: 'eager', widths: '400, 600, 800, 1200', sizes: '(min-width: 990px) 45vw, 90vw'
+            }}
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag }}
+          {% endif %}
+        </div>
+      </div>
+
+      <img
+        class="nailscene-hero__cd"
+        src="{{ 'nailscene-cd.png' | asset_url }}"
+        alt=""
+        width="320"
+        height="320"
+        loading="lazy"
+      >
+
+      <div class="nailscene-hero__status">
+        <div class="nailscene-hero__status-bar">
+          <span>FILE SYSTEM</span>
+          <span aria-hidden="true">×</span>
+        </div>
+
+        <div class="nailscene-hero__status-content">
+          <span aria-hidden="true" class="nailscene-hero__folder">▱</span>
+
+          <div>
+            <p>
+              FILES DETECTED:
+              <strong>
+                {% if featured_collection != blank %}
+                  {{ featured_collection.products_count }}
+                {% else %}
+                  00
+                {% endif %}
+              </strong>
+            </p>
+
+            <p>STATUS: <strong class="is-online">ONLINE</strong></p>
+            <p>ACCESS: <strong class="is-online">OPEN</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "YOUR SCENE. YOUR SET."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Press-on nails made for every mood. New files, new looks, always on scene."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Main nail photograph"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Featured collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "NailScene Hero"
+    }
+  ]
+}
+{% endschema %}

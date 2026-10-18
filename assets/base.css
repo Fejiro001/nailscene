@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
 product-component,
 collection-component {
   display: block;
 }
 
 :root {
+  --nail-font-heading: 'Oxanium', sans-serif;
+  --nail-font-body: 'Space Mono', monospace;
+  --nail-purple: #55437d;
+  --nail-border: #6953ba;
   --alpha-button-background: 1;
   --alpha-button-border: 1;
   --alpha-link: 0.85;
@@ -3666,6 +3672,21 @@ details-disclosure > details {
   }
 }
 
+/* Body text */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--nail-font-body);
+}
+
+/* Paragraphs */
+p {
+  font-family: var(--nail-font-body);
+  line-height: 1.7;
+}
+
 /* NailScene — retro desktop header */
 .nailscene-header {
   background: #fefaff;
@@ -3673,10 +3694,6 @@ details-disclosure > details {
   border-radius: 0;
   box-shadow: 3px 3px 0 #c0a8eb;
   color: #5c468f;
-}
-
-.nailscene-header .header {
-  font-family: 'Space Mono', monospace;
 }
 
 .nailscene-header .header__heading-link,
@@ -3759,7 +3776,6 @@ details-disclosure > details {
   background: linear-gradient(180deg, #f3e8ff 0%, #ddbbee 35%, #c0a8eb 75%, #b39adf 100%);
   border: 1px solid #6b55ba;
   border-bottom: none;
-  font-family: 'Space Mono', monospace;
   color: #55437d;
   font-size: 11px;
   font-weight: 700;
@@ -3802,4 +3818,61 @@ details-disclosure > details {
     width: 16px;
     height: 16px;
   }
+}
+
+/* ========================================
+   NAILSCENE RETRO BUTTONS
+======================================== */
+
+.nailscene-retro-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  padding: 16px 32px;
+
+  background: linear-gradient(180deg, #f9eaff 0%, #e5c6f7 45%, #c6a1ed 100%);
+
+  border: 2px solid #55437d;
+  border-radius: 2px;
+
+  box-shadow:
+    inset 3px 3px 0 #ffffff,
+    inset -3px -3px 0 #a98bdf,
+    4px 4px 0 #55437d;
+
+  color: #55437d;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.nailscene-retro-button:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #edceff 50%, #d2a9f5 100%);
+
+  transform: translate(-1px, -1px);
+
+  box-shadow:
+    inset 3px 3px 0 #ffffff,
+    inset -3px -3px 0 #a98bdf,
+    5px 5px 0 #55437d;
+}
+
+.nailscene-retro-button:active {
+  transform: translate(3px, 3px);
+
+  box-shadow:
+    inset 2px 2px 0 #a98bdf,
+    inset -2px -2px 0 #ffffff,
+    1px 1px 0 #55437d;
 }

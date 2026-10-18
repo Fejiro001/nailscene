@@ -142,11 +142,24 @@
   endif
 %}
 
+<div class="nailscene-titlebar">
+  <div class="nailscene-titlebar__name">
+    <span class="nailscene-titlebar__star">✦</span>
+    <span>NAILSCENE.EXE — HOME</span>
+  </div>
+
+  <div class="nailscene-titlebar__controls" aria-hidden="true">
+    <span>🗕</span>
+    <span>🗖</span>
+    <span>✖</span>
+  </div>
+</div>
+
 <{{ header_tag }}
   {% if header_tag == 'sticky-header' %}
     data-sticky-type="{{ section.settings.sticky_header_type }}"
   {% endif %}
-  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+  class="header-wrapper nailscene-header color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
 >
   {%- liquid
     assign social_links = false

@@ -1,0 +1,124 @@
+
+{{ 'nailscene-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="nailscene-footer">
+  <div class="nailscene-footer__container">
+
+    <div class="nailscene-footer__topline">
+      <span>✦ NAILSCENE.EXE / SYSTEM FOOTER</span>
+      <span>STATUS: ONLINE ●</span>
+    </div>
+
+    <div class="nailscene-footer__main">
+
+      <div class="nailscene-footer__brand">
+        {% if settings.logo != blank %}
+          {{
+            settings.logo
+            | image_url: width: 400
+            | image_tag:
+              class: 'nailscene-footer__logo',
+              loading: 'lazy',
+              alt: shop.name
+          }}
+        {% else %}
+          <h2>NAILSCENE</h2>
+        {% endif %}
+
+        <p>
+          YOUR SCENE. YOUR SET.
+          <br>
+          PRESS-ON NAILS MADE TO STAND OUT.
+        </p>
+      </div>
+
+      <nav class="nailscene-footer__nav" aria-label="Footer navigation">
+        <h3>EXPLORE_FILES</h3>
+
+        {% if section.settings.footer_menu != blank %}
+          <ul>
+            {% for link in section.settings.footer_menu.links %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title | escape }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <ul>
+            <li><a href="{{ routes.root_url }}">HOME</a></li>
+            <li><a href="/collections/scene-files">SCENE FILES</a></li>
+            <li><a href="/pages/about">ABOUT</a></li>
+            <li><a href="/pages/contact">CONTACT</a></li>
+          </ul>
+        {% endif %}
+      </nav>
+
+      <div class="nailscene-footer__social">
+        <h3>STAY_CONNECTED</h3>
+
+        {% if section.settings.instagram_url != blank %}
+          <a
+            href="{{ section.settings.instagram_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ↗ INSTAGRAM
+          </a>
+        {% endif %}
+
+        {% if section.settings.tiktok_url != blank %}
+          <a
+            href="{{ section.settings.tiktok_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ↗ TIKTOK
+          </a>
+        {% endif %}
+
+        <p>MADE FOR YOUR MAIN CHARACTER MOMENTS ✦</p>
+      </div>
+
+    </div>
+
+    <div class="nailscene-footer__bottom">
+      <span>
+        © {{ 'now' | date: '%Y' }} NAILSCENE.
+        ALL RIGHTS RESERVED.
+      </span>
+
+      <span>NAILSCENE.EXE // END OF FILE ✦</span>
+    </div>
+
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "NailScene Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer menu"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "NailScene Footer"
+    }
+  ]
+}
+{% endschema %}

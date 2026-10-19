@@ -1,0 +1,189 @@
+.nailscene-footer {
+  padding: 0 5%;
+  background: linear-gradient(
+    180deg,
+    #e4d3f7 0%,
+    #d5bdeb 100%
+  );
+  color: #55437d;
+  border-top: 2px solid #9572d3;
+}
+
+.nailscene-footer__container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+/* Top system bar */
+
+.nailscene-footer__topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 15px 0;
+  border-bottom: 1px solid #9572d3;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Main layout */
+
+.nailscene-footer__main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 60px;
+  padding: 35px 0;
+}
+
+/* Brand */
+
+.nailscene-footer__logo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.nailscene-footer__brand h2 {
+  margin: 0 0 20px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.nailscene-footer__brand p {
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+}
+
+/* Navigation and social */
+
+.nailscene-footer__nav h3,
+.nailscene-footer__social h3 {
+  margin: 0 0 22px;
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-footer__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nailscene-footer__nav li {
+  margin-bottom: 12px;
+}
+
+.nailscene-footer__nav a,
+.nailscene-footer__social a {
+  display: block;
+  width: fit-content;
+  color: #6953ba;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nailscene-footer__social a {
+  margin-bottom: 12px;
+}
+
+.nailscene-footer__nav a:hover,
+.nailscene-footer__social a:hover {
+  color: #55437d;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nailscene-footer__social p {
+  max-width: 240px;
+  margin: 25px 0 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Bottom copyright bar */
+
+.nailscene-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 18px 0;
+  border-top: 1px solid #9572d3;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+/* Tablet */
+
+@media (max-width: 989px) {
+  .nailscene-footer__main {
+    gap: 30px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 749px) {
+  .nailscene-footer {
+    padding: 0 20px;
+  }
+
+  .nailscene-footer__topline {
+    font-size: 8px;
+  }
+
+  .nailscene-footer__main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 20px;
+    padding: 35px 0;
+  }
+
+  .nailscene-footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .nailscene-footer__logo {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .nailscene-footer__nav h3,
+  .nailscene-footer__social h3 {
+    font-size: 11px;
+  }
+
+  .nailscene-footer__nav a,
+  .nailscene-footer__social a {
+    font-size: 11px;
+  }
+
+  .nailscene-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 9px;
+  }
+}

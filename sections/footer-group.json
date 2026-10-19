@@ -14,7 +14,7 @@
     "nailscene_footer": {
       "type": "nailscene-footer",
       "settings": {
-        "footer_menu": "",
+        "footer_menu": "footer",
         "instagram_url": "https://www.instagram.com/nailscene_official",
         "tiktok_url": "https://www.tiktok.com/@nailscene_official"
       }

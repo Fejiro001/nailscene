@@ -18,9 +18,10 @@
 
 .nailscene-files__heading h2 {
   margin: 0 0 10px;
-  font-family: inherit;
+  font-family: var(--nail-font-heading);
   font-size: clamp(1.6rem, 2vw, 2.5rem);
   font-weight: 700;
+  font-style: italic;
   letter-spacing: 0.12em;
   color: #55437d;
 }

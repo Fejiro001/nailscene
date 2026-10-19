@@ -31,9 +31,42 @@
         "heading": "WELCOME TO THE SCENE",
         "description": "<p>NailScene is your digital destination for statement-making press-ons, limited drops and sets made to become the scene.</p>",
         "button_label": "DISCOVER NAILSCENE",
-        "button_link": ""
+        "button_link": "shopify://pages/about"
+      }
+    },
+    "nailscene_how": {
+      "type": "nailscene-how-it-works",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "PICK YOUR SET",
+            "description": "Explore our Scene Files and choose the design that matches your mood."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "FIND YOUR FIT",
+            "description": "Check the sizing guide to find the right fit for your nails."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "MAKE IT YOURS",
+            "description": "Add your set to your bag and complete your order."
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3"],
+      "settings": {
+        "heading": "HOW TO ENTER THE SCENE",
+        "subtitle": "YOUR NEXT SET IS ONLY THREE STEPS AWAY",
+        "button_label": "EXPLORE SCENE FILES",
+        "button_link": "shopify://collections/scene-files"
       }
     }
   },
-  "order": ["nailscene_hero", "nailscene_files", "nailscene_enter"]
+  "order": ["nailscene_hero", "nailscene_files", "nailscene_enter", "nailscene_how"]
 }

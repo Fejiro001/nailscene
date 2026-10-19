@@ -1,0 +1,166 @@
+{{ 'nailscene-how-it-works.css' | asset_url | stylesheet_tag }}
+
+<section class="nailscene-how">
+  <div class="nailscene-how__container">
+    <div class="nailscene-how__topline">
+      <span>✦ NAILSCENE SETUP WIZARD</span>
+      <span>VERSION 1.0 // QUICK START</span>
+    </div>
+
+    <header class="nailscene-how__heading">
+      <p class="nailscene-how__eyebrow">USER_GUIDE // 001</p>
+      <h2>{{ section.settings.heading | escape }}</h2>
+      <p class="nailscene-how__subtitle">
+        {{ section.settings.subtitle | escape }}
+      </p>
+    </header>
+
+    <div class="nailscene-how__progress">
+      <div class="nailscene-how__progress-label">
+        <span>YOUR SCENE IS LOADING...</span>
+        <span>03 STEPS DETECTED</span>
+      </div>
+
+      <div class="nailscene-how__progress-track" aria-hidden="true">
+        {% for i in (1..20) %}
+          <span class="{% if i <= 14 %}is-filled{% endif %}"></span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="nailscene-how__steps">
+      {% for block in section.blocks %}
+        <article
+          class="nailscene-how__step"
+          {{ block.shopify_attributes }}
+        >
+          <div class="nailscene-how__step-top">
+            <span>STEP_00{{ forloop.index }}</span>
+            <span class="nailscene-how__step-status">
+              {% if forloop.first %}
+                ACTIVE ✦
+              {% else %}
+                READY
+              {% endif %}
+            </span>
+          </div>
+
+          <div class="nailscene-how__step-icon" aria-hidden="true">
+            {% case forloop.index %}
+              {% when 1 %}
+                {{ 'heart.svg' | inline_asset_content }}
+              {% when 2 %}
+                {{ 'ruler.svg' | inline_asset_content }}
+              {% when 3 %}
+                {{ 'handbag.svg' | inline_asset_content }}
+            {% endcase %}
+          </div>
+
+          <span class="nailscene-how__number"> 0{{ forloop.index }} </span>
+
+          <h3>{{ block.settings.title | escape }}</h3>
+
+          <p>{{ block.settings.description | escape }}</p>
+        </article>
+
+        {% unless forloop.last %}
+          <span class="nailscene-how__connector" aria-hidden="true"> → </span>
+        {% endunless %}
+      {% endfor %}
+    </div>
+
+    <div class="nailscene-how__bottom">
+      <p>✧ YOUR NEXT SET STARTS HERE</p>
+
+      {% if section.settings.button_link != blank %}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="nailscene-retro-button nailscene-how__button"
+        >
+          {{ section.settings.button_label | escape }}
+          <span aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene How It Works",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "HOW TO ENTER THE SCENE"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "YOUR NEXT SET IS ONLY THREE STEPS AWAY"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "EXPLORE SCENE FILES"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "PICK YOUR SET"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Explore our Scene Files and choose the design that matches your mood."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "NailScene How It Works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "PICK YOUR SET",
+            "description": "Explore our Scene Files and choose the design that matches your mood."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "FIND YOUR FIT",
+            "description": "Check the sizing guide to find the right fit for your nails."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "MAKE IT YOURS",
+            "description": "Add your set to your bag and complete your order."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

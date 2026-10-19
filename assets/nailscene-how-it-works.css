@@ -1,0 +1,371 @@
+.nailscene-how {
+  position: relative;
+  overflow: hidden;
+  padding: 55px 5%;
+  background:
+    radial-gradient(ellipse at 10% 15%, rgba(221, 187, 238, 0.65), transparent 45%),
+    radial-gradient(ellipse at 90% 85%, rgba(192, 168, 235, 0.45), transparent 45%), #f8f1ff;
+
+  color: #55437d;
+}
+
+.nailscene-how__container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+/* Top system information */
+
+.nailscene-how__topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding-bottom: 15px;
+  border-bottom: 1px solid #bfa3ed;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Heading */
+
+.nailscene-how__heading {
+  margin: 30px auto 25px;
+  text-align: center;
+}
+
+.nailscene-how__eyebrow {
+  margin: 0 0 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+
+.nailscene-how__heading h2 {
+  margin: 0 0 12px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.nailscene-how__subtitle {
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+/* Retro progress bar */
+
+.nailscene-how__progress {
+  max-width: 850px;
+  margin: 0 auto 30px;
+}
+
+.nailscene-how__progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 12px;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-how__progress-track {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 4px;
+
+  padding: 5px;
+  border: 2px solid #6953ba;
+  background: #fffaff;
+
+  box-shadow: 3px 3px 0 #c0a8eb;
+}
+
+.nailscene-how__progress-track span {
+  height: 16px;
+  background: #e8d9f7;
+}
+
+.nailscene-how__progress-track span.is-filled {
+  background: linear-gradient(180deg, #d6b5f4, #9e7bd6);
+}
+
+/* Three connected steps */
+
+.nailscene-how__steps {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.nailscene-how__step {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+
+  padding: 0 20px 20px;
+
+  border: 2px solid #9572d3;
+  border-radius: 8px;
+
+  background: rgba(255, 250, 255, 0.85);
+
+  box-shadow: 4px 4px 0 rgba(149, 114, 211, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nailscene-how__step:first-child {
+  background: linear-gradient(160deg, #e6d3fa, #f8efff);
+}
+
+.nailscene-how__step:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 8px 0 rgba(149, 114, 211, 0.3);
+}
+
+/* Step top row */
+
+.nailscene-how__step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 -20px 16px;
+  padding: 9px 14px;
+
+  border-bottom: 1px solid #c0a8eb;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.nailscene-how__step-status {
+  color: #8060bc;
+}
+
+/* Decorative icon */
+
+.nailscene-how__step-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  border: 1px solid #a78ad8;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fffaff, #e6d3fa);
+  box-shadow: 3px 3px 0 #c0a8eb;
+}
+
+.nailscene-how__step-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  color: #6953ba;
+}
+
+/* Number */
+
+.nailscene-how__number {
+  display: block;
+  margin-bottom: 8px;
+  color: #a78ad8;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Step text */
+
+.nailscene-how__step h3 {
+  margin: 0 0 12px;
+
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.nailscene-how__step p {
+  margin: 0;
+
+  color: #6953ba;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Arrows connecting the steps */
+
+.nailscene-how__connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 24px;
+
+  color: #8060bc;
+  font-family: 'Space Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Bottom CTA */
+
+.nailscene-how__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+
+  margin-top: 45px;
+  padding-top: 18px;
+
+  border-top: 1px solid #bfa3ed;
+}
+
+.nailscene-how__bottom p {
+  margin: 0;
+
+  color: #6953ba;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-how__button {
+  flex-shrink: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 989px) {
+  .nailscene-how__steps {
+    gap: 8px;
+  }
+
+  .nailscene-how__step {
+    padding: 0 15px 20px;
+  }
+
+  .nailscene-how__step-top {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .nailscene-how__connector {
+    flex-basis: 15px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 749px) {
+  .nailscene-how {
+    padding: 40px 20px;
+  }
+
+  .nailscene-how__topline {
+    font-size: 9px;
+  }
+
+  .nailscene-how__heading {
+    margin: 30px auto 25px;
+  }
+
+  .nailscene-how__heading h2 {
+    font-size: 30px;
+  }
+
+  .nailscene-how__progress {
+    margin-bottom: 25px;
+  }
+
+  .nailscene-how__progress-label {
+    font-size: 9px;
+  }
+
+  .nailscene-how__progress-track {
+    gap: 2px;
+  }
+
+  .nailscene-how__progress-track span {
+    height: 12px;
+  }
+
+  .nailscene-how__steps {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nailscene-how__step {
+    padding: 0 18px 20px;
+  }
+
+  .nailscene-how__step-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+    font-size: 34px;
+  }
+
+  .nailscene-how__number {
+    font-size: 42px;
+    margin-bottom: 8px;
+  }
+
+  .nailscene-how__step-top {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+
+  .nailscene-how__connector {
+    transform: rotate(90deg);
+    align-self: center;
+    font-size: 25px;
+  }
+
+  .nailscene-how__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .nailscene-how__button {
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nailscene-how__step {
+    transition: none;
+  }
+
+  .nailscene-how__step:hover {
+    transform: none;
+  }
+}

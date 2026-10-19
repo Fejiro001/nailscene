@@ -23,7 +23,17 @@
         "collection": "scene-files",
         "product_limit": 3
       }
+    },
+    "nailscene_enter": {
+      "type": "nailscene-enter",
+      "name": "NailScene Enter",
+      "settings": {
+        "heading": "WELCOME TO THE SCENE",
+        "description": "<p>NailScene is your digital destination for statement-making press-ons, limited drops and sets made to become the scene.</p>",
+        "button_label": "DISCOVER NAILSCENE",
+        "button_link": ""
+      }
     }
   },
-  "order": ["nailscene_hero", "nailscene_files"]
+  "order": ["nailscene_hero", "nailscene_files", "nailscene_enter"]
 }

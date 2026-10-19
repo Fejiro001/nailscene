@@ -1,0 +1,175 @@
+.nailscene-enter {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 5%;
+  background-color: #e9ddff;
+  background-image: url('nailscene-enter-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #55437d;
+}
+
+.nailscene-enter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 235, 255, 0.15);
+  pointer-events: none;
+}
+
+.nailscene-enter__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left content */
+
+.nailscene-enter__heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.nailscene-enter__sparkle {
+  font-size: 44px;
+  line-height: 1;
+  color: #6953ba;
+}
+
+.nailscene-enter__heading h2 {
+  margin: 0;
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(28px, 2.8vw, 40px);
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.nailscene-enter__description {
+  max-width: 500px;
+  margin: 0 0 35px 0;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.9;
+}
+
+/* Right desktop window */
+
+.nailscene-enter__window {
+  width: 100%;
+  max-width: 480px;
+  justify-self: center;
+  padding: 5px;
+  border: 2px solid #6953ba;
+  border-radius: 7px;
+  background: #fefaff;
+  box-shadow:
+    5px 5px 0 #a88ed9,
+    inset 1px 1px 0 #fff;
+}
+
+.nailscene-enter__titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  border: 1px solid #6953ba;
+  background: linear-gradient(180deg, #f9eaff, #ddbbee 55%, #bfa3ed);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nailscene-enter__controls {
+  letter-spacing: 6px;
+}
+
+.nailscene-enter__window-content {
+  padding: 24px 30px 30px;
+  border: 1px solid #c0a8eb;
+  background: rgba(245, 235, 255, 0.9);
+}
+
+.nailscene-enter__cd {
+  display: block;
+  width: min(48%, 190px);
+  height: auto;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
+
+.nailscene-enter__list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.nailscene-enter__list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nailscene-enter__list li span {
+  color: #6953ba;
+  font-size: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 989px) {
+  .nailscene-enter__container {
+    gap: 35px;
+  }
+
+  .nailscene-enter__description,
+  .nailscene-enter__button {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 749px) {
+  .nailscene-enter {
+    padding: 65px 20px;
+  }
+
+  .nailscene-enter__container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .nailscene-enter__heading {
+    gap: 12px;
+  }
+
+  .nailscene-enter__heading h2 {
+    font-size: 24px;
+  }
+
+  .nailscene-enter__description {
+    margin-bottom: 25px;
+  }
+
+  .nailscene-enter__window-content {
+    padding: 25px 20px;
+  }
+
+  .nailscene-enter__list {
+    font-size: 13px;
+  }
+}

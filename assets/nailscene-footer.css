@@ -1,11 +1,7 @@
 .nailscene-footer {
   padding: 0 5%;
-  background: linear-gradient(
-    180deg,
-    #e4d3f7 0%,
-    #d5bdeb 100%
-  );
-  color: #55437d;
+  background: linear-gradient(180deg, #e4d3f7 0%, #d5bdeb 100%);
+  color: #3d285f;
   border-top: 2px solid #9572d3;
 }
 
@@ -72,7 +68,7 @@
 .nailscene-footer__nav h3,
 .nailscene-footer__social h3 {
   margin: 0 0 22px;
-  color: #55437d;
+  color: #382052;
   font-family: 'Space Mono', monospace;
   font-size: 13px;
   font-weight: 700;
@@ -93,9 +89,10 @@
 .nailscene-footer__social a {
   display: block;
   width: fit-content;
-  color: #6953ba;
+  color: #49336e;
   font-family: 'Space Mono', monospace;
   font-size: 12px;
+  font-weight: 600;
   line-height: 1.7;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -107,7 +104,7 @@
 
 .nailscene-footer__nav a:hover,
 .nailscene-footer__social a:hover {
-  color: #55437d;
+  color: #28143f;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -134,6 +131,16 @@
   font-family: 'Space Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.06em;
+}
+
+.nailscene-footer__topline,
+.nailscene-footer__bottom {
+  color: #3d285f;
+}
+
+.nailscene-footer__brand p,
+.nailscene-footer__social p {
+  color: #49336e;
 }
 
 /* Tablet */

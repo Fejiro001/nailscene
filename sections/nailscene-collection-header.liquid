@@ -1,0 +1,67 @@
+
+{{ 'nailscene-collection.css' | asset_url | stylesheet_tag }}
+
+<section class="nailscene-collection-hero">
+  <div class="nailscene-collection-hero__container">
+
+    <div class="nailscene-collection-hero__system">
+      <span>✦ NAILSCENE.EXE / COLLECTION DIRECTORY</span>
+      <span>STATUS: ONLINE ●</span>
+    </div>
+
+    <div class="nailscene-collection-hero__main">
+      <div class="nailscene-collection-hero__copy">
+        <p class="nailscene-collection-hero__eyebrow">
+          SCENE_DATABASE // {{ collection.handle | upcase | replace: '-', '_' }}
+        </p>
+
+        <h1>{{ collection.title | escape | upcase }}</h1>
+
+        {% if collection.description != blank %}
+          <div class="nailscene-collection-hero__description">
+            {{ collection.description }}
+          </div>
+        {% else %}
+          <p class="nailscene-collection-hero__description">
+            {{ section.settings.subtitle | escape }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="nailscene-collection-hero__counter">
+        <span>FILES_DETECTED</span>
+
+        <strong>
+          {{ collection.all_products_count }}
+        </strong>
+
+        <span>NAIL SETS IN THE SCENE</span>
+      </div>
+    </div>
+
+    <div class="nailscene-collection-hero__bottom">
+      <span>✧ FIND YOUR NEXT OBSESSION</span>
+      <span>SCROLL TO EXPLORE ↓</span>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene Files Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Collection subtitle",
+      "default": "STATEMENT-MAKING PRESS-ONS FOR EVERY VERSION OF YOU. EXPLORE THE FILES AND FIND YOUR NEXT SET."
+    }
+  ],
+  "presets": [
+    {
+      "name": "NailScene Files Header"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,643 @@
+/* =====================================
+   NAILSCENE Y2K BOOT SCREEN
+===================================== */
+
+.nailscene-loader[hidden] {
+  display: none !important;
+}
+
+html.nailscene-loader-open,
+html.nailscene-loader-open body {
+  overflow: hidden;
+}
+
+/* FULL-SCREEN BACKGROUND */
+
+.nailscene-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  overflow-y: auto;
+
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(204, 108, 244, 0.24), transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(107, 85, 186, 0.25), transparent 48%),
+    linear-gradient(135deg, #fefaff, #efe4fc 45%, #ded0f4);
+
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Subtle retro digital grid */
+
+.nailscene-loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(107, 85, 186, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 85, 186, 0.045) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+
+  mask-image: radial-gradient(ellipse, transparent 20%, black 100%);
+
+  pointer-events: none;
+}
+
+/* MAIN WINDOW */
+
+.nailscene-loader__window {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 560px;
+  margin: auto;
+
+  padding: 5px;
+
+  border: 2px solid #6953ba;
+  border-radius: 8px;
+
+  background: #fefaff;
+
+  box-shadow:
+    5px 5px 0 #b8a3e4,
+    0 18px 65px rgba(85, 67, 125, 0.18);
+
+  animation: ns-window-enter 0.55s ease-out both;
+}
+
+/* WINDOW TITLE BAR */
+
+.nailscene-loader__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+  padding: 10px 14px;
+
+  border: 1px solid #9572d3;
+
+  background: linear-gradient(180deg, #ffffff 0%, #eee2fc 25%, #d4b9f3 75%, #bd9fe9 100%);
+
+  color: #49336e;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.nailscene-loader__window-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nailscene-loader__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* WINDOW CONTENT */
+
+.nailscene-loader__content {
+  padding: 20px 25px 24px;
+
+  border: 1px solid #c0a8eb;
+  border-top: 0;
+
+  background:
+    radial-gradient(ellipse at 50% 10%, rgba(221, 187, 238, 0.46), transparent 60%),
+    linear-gradient(180deg, #fefaff, #f6efff 55%, #eee3fd);
+
+  text-align: center;
+}
+
+/* =====================================
+   HOLOGRAPHIC DISPLAY
+===================================== */
+
+.nailscene-loader__display {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 250px;
+  padding: 12px 14px;
+
+  border: 2px solid #b49adc;
+  border-radius: 4px;
+
+  background:
+    radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, 0.95), rgba(221, 187, 238, 0.38) 35%, transparent 70%),
+    linear-gradient(125deg, #dcd0f7, #fefaff 32%, #ddd6f4 60%, #edcffa 100%);
+
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.95),
+    inset -2px -2px 0 rgba(149, 114, 211, 0.25),
+    3px 3px 0 rgba(149, 114, 211, 0.22);
+}
+
+/* Animated light reflection */
+
+.nailscene-loader__display::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  z-index: 2;
+
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.6) 49%,
+    rgba(255, 255, 255, 0.15) 54%,
+    transparent 62%
+  );
+
+  transform: translateX(-100%);
+  animation: ns-holo-shine 4s ease-in-out 0.5s infinite;
+
+  pointer-events: none;
+}
+
+/* Display metadata */
+
+.nailscene-loader__display-top,
+.nailscene-loader__display-bottom {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  color: #6953ba;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-loader__display-bottom {
+  opacity: 0.8;
+}
+
+/* STAR LOGO */
+
+.nailscene-loader__logo-stage {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  flex: 1;
+  min-height: 165px;
+}
+
+/* Soft luminous halo; no orbital ring */
+
+.nailscene-loader__logo-stage::before {
+  content: '';
+  position: absolute;
+
+  width: 210px;
+  height: 140px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.95), rgba(204, 108, 244, 0.17) 50%, transparent 75%);
+
+  filter: blur(12px);
+
+  animation: ns-glow 3.5s ease-in-out infinite;
+}
+
+.nailscene-loader__logo {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 190px;
+  height: 190px;
+  max-width: 100%;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 8px 12px rgba(85, 67, 125, 0.23));
+
+  animation:
+    ns-star-reveal 0.8s ease-out both,
+    ns-star-float 4s ease-in-out 0.8s infinite;
+}
+
+.nailscene-loader__fallback-logo {
+  z-index: 1;
+  color: #6953ba;
+  font-size: 120px;
+}
+
+/* =====================================
+   WELCOME HEADING
+===================================== */
+
+.nailscene-loader__intro {
+  padding: 25px 0 20px;
+  animation: ns-fade-up 0.6s ease-out 0.2s both;
+}
+
+.nailscene-loader__eyebrow {
+  margin: 0 0 10px;
+
+  color: #6b55ba;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.nailscene-loader__intro h2 {
+  margin: 0;
+
+  color: #55437d;
+
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(34px, 5vw, 47px);
+  font-style: italic;
+  font-weight: 800;
+
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.nailscene-loader__intro h2 span {
+  display: block;
+
+  background: linear-gradient(180deg, #55437d 10%, #6c53d8 65%, #9b72dc);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =====================================
+   BOOT SEQUENCE
+===================================== */
+
+.nailscene-loader__boot {
+  padding: 16px;
+
+  border: 1px solid #c0a8eb;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  box-shadow: inset 1px 1px 0 #fff;
+}
+
+.nailscene-loader__progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 12px;
+  margin-bottom: 11px;
+
+  color: #49336e;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Progress bar */
+
+.nailscene-loader__progress {
+  position: relative;
+
+  width: 100%;
+  height: 23px;
+
+  padding: 4px;
+  overflow: hidden;
+
+  border: 2px solid #6953ba;
+  border-radius: 2px;
+
+  background: #fffaff;
+
+  box-shadow:
+    inset 2px 2px 0 rgba(85, 67, 125, 0.14),
+    2px 2px 0 #c0a8eb;
+}
+
+.nailscene-loader__progress-fill {
+  display: block !important;
+
+  width: 0;
+  height: 100%;
+
+  background: linear-gradient(90deg, #8c68cf, #c59dea 45%, #f2e7ff 70%, #9b72dc);
+
+  border-right: 1px solid #6953ba;
+}
+
+/* Segmented retro texture */
+
+.nailscene-loader__progress::after {
+  content: '';
+
+  position: absolute;
+  inset: 4px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 19px,
+    rgba(255, 255, 255, 0.85) 19px,
+    rgba(255, 255, 255, 0.85) 22px
+  );
+
+  pointer-events: none;
+}
+
+/* Dynamic product count */
+
+.nailscene-loader__file-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 13px;
+
+  color: #6953ba;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* =====================================
+   ENTER BUTTON + FOOTER
+===================================== */
+
+.nailscene-loader__actions {
+  padding-top: 22px;
+}
+
+.nailscene-loader__enter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 52px;
+  padding: 12px 28px;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+
+  cursor: pointer;
+}
+
+/* Extra emphasis once loading finishes */
+
+.nailscene-loader.is-ready .nailscene-loader__enter {
+  animation: ns-button-ready 0.55s ease-out 1;
+}
+
+.nailscene-loader__footer {
+  margin: 24px 0 0;
+
+  color: #6953ba;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes ns-window-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ns-star-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.7) rotate(-12deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes ns-star-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes ns-glow {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes ns-holo-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  55% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes ns-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ns-button-ready {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.12);
+  }
+}
+
+/* Exit animation */
+
+.nailscene-loader.is-closing {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 749px) {
+  .nailscene-loader {
+    padding: 12px;
+  }
+
+  .nailscene-loader__window {
+    max-width: 440px;
+  }
+
+  .nailscene-loader__content {
+    padding: 15px;
+  }
+
+  .nailscene-loader__display {
+    min-height: 205px;
+    padding: 10px;
+  }
+
+  .nailscene-loader__logo-stage {
+    min-height: 130px;
+  }
+
+  .nailscene-loader__logo {
+    width: 155px;
+    height: 155px;
+  }
+
+  .nailscene-loader__intro {
+    padding: 22px 0 18px;
+  }
+
+  .nailscene-loader__intro h2 {
+    font-size: 36px;
+  }
+
+  .nailscene-loader__eyebrow {
+    font-size: 9px;
+  }
+
+  .nailscene-loader__titlebar {
+    font-size: 10px;
+  }
+
+  .nailscene-loader__display-top,
+  .nailscene-loader__display-bottom,
+  .nailscene-loader__file-info {
+    font-size: 8px;
+  }
+
+  .nailscene-loader__boot {
+    padding: 12px;
+  }
+
+  .nailscene-loader__progress-label {
+    font-size: 9px;
+  }
+
+  .nailscene-loader__enter {
+    font-size: 11px;
+  }
+}
+
+@media (max-height: 740px) {
+  .nailscene-loader__display {
+    min-height: 180px;
+  }
+
+  .nailscene-loader__logo-stage {
+    min-height: 115px;
+  }
+
+  .nailscene-loader__logo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .nailscene-loader__intro {
+    padding: 16px 0;
+  }
+
+  .nailscene-loader__intro h2 {
+    font-size: 34px;
+  }
+
+  .nailscene-loader__actions {
+    padding-top: 15px;
+  }
+
+  .nailscene-loader__footer {
+    margin-top: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nailscene-loader__window,
+  .nailscene-loader__logo,
+  .nailscene-loader__logo-stage::before,
+  .nailscene-loader__display::after,
+  .nailscene-loader__intro,
+  .nailscene-loader.is-ready .nailscene-loader__enter {
+    animation: none;
+  }
+
+  .nailscene-loader.is-closing {
+    transition: none;
+  }
+}

@@ -1,0 +1,143 @@
+{{ 'nailscene-loader.css' | asset_url | stylesheet_tag }}
+
+{% assign scene_collection = collections['scene-files'] %}
+{% assign scene_count = scene_collection.all_products_count | default: 0 %}
+
+<div
+  id="nailscene-loader"
+  class="nailscene-loader"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Welcome to NailScene"
+  hidden
+>
+  <div class="nailscene-loader__window">
+    <!-- Retro desktop title bar -->
+    <div class="nailscene-loader__titlebar">
+      <div class="nailscene-loader__window-name">
+        <span aria-hidden="true">✦</span>
+        <span>NAILSCENE.EXE</span>
+      </div>
+
+      <div class="nailscene-loader__controls" aria-hidden="true">
+        <span>🗕</span>
+        <span>🗖</span>
+        <span>✖</span>
+      </div>
+    </div>
+
+    <div class="nailscene-loader__content">
+      <!-- Holographic logo display -->
+      <div class="nailscene-loader__display">
+        <div class="nailscene-loader__display-top">
+          <span>SCENE_OS // 001</span>
+          <span id="nailscene-display-status">✦ INITIALIZING</span>
+        </div>
+
+        <div class="nailscene-loader__logo-stage">
+          {% if settings.favicon != blank %}
+            {{
+              settings.favicon
+              | image_url: width: 600
+              | image_tag: class: 'nailscene-loader__logo', loading: 'eager', alt: 'NailScene Star Logo'
+            }}
+          {% else %}
+            <span class="nailscene-loader__fallback-logo" aria-hidden="true"> ✦ </span>
+          {% endif %}
+        </div>
+
+        <div class="nailscene-loader__display-bottom">
+          <span>YOUR SCENE. YOUR SET.</span>
+          <span>EST. 2026 ✦</span>
+        </div>
+      </div>
+
+      <!-- Welcome heading -->
+      <div class="nailscene-loader__intro">
+        <p class="nailscene-loader__eyebrow">✦ ACCESS GRANTED TO YOUR NEXT OBSESSION</p>
+
+        <h2>
+          WELCOME TO
+          <span>THE SCENE.</span>
+        </h2>
+      </div>
+
+      <!-- Boot sequence -->
+      <div class="nailscene-loader__boot">
+        <div class="nailscene-loader__progress-label">
+          <span id="nailscene-loading-status"> BOOTING NAILSCENE... </span>
+
+          <span id="nailscene-loading-percent">0%</span>
+        </div>
+
+        <div
+          class="nailscene-loader__progress"
+          role="progressbar"
+          aria-label="Preparing NailScene"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div class="nailscene-loader__progress-fill"></div>
+        </div>
+
+        <div class="nailscene-loader__file-info">
+          <span>
+            ✦ SCENE FILES:
+            {{ scene_count }}
+            {% if scene_count == 1 %}
+              SET
+            {% else %}
+              SETS
+            {% endif %}
+          </span>
+
+          <span>PRESS-ON NAIL SYSTEM</span>
+        </div>
+      </div>
+
+      <!-- Enter CTA -->
+      <div class="nailscene-loader__actions">
+        <button
+          type="button"
+          class="nailscene-retro-button nailscene-loader__enter"
+        >
+          ENTER THE SCENE
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p
+          class="nailscene-loader__footer"
+          id="nailscene-loader-footer"
+        >
+          SCENE_001 // STARTUP SEQUENCE
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var loader = document.getElementById('nailscene-loader');
+
+    if (!loader || (window.Shopify && window.Shopify.designMode)) {
+      return;
+    }
+
+    var alreadySeen = false;
+
+    try {
+      alreadySeen = sessionStorage.getItem('nailscene-intro-seen') === '1';
+    } catch (error) {
+      alreadySeen = false;
+    }
+
+    if (!alreadySeen) {
+      loader.hidden = false;
+      document.documentElement.classList.add('nailscene-loader-open');
+    }
+  })();
+</script>
+
+<script src="{{ 'nailscene-loader.js' | asset_url }}" defer></script>

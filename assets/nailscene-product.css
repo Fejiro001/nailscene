@@ -15,7 +15,7 @@
 
 .nailscene-product .product {
   align-items: start;
-  gap: 35px;
+  gap: 0;
 }
 
 .nailscene-product .product__info-container {

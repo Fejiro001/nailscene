@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-archive",
+      "settings": {
+        "heading": "SCENE ARCHIVE",
+        "subtitle": "PREVIOUS SCENES // PRESERVED FILES"
+      }
+    }
+  },
+  "order": ["main"]
+}

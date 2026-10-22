@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/nailscene-logo_d8736c3b-47be-4735-8709-46dd58512b0f.png",
+    "logo": "shopify://shop_images/nailscene-logo.png",
     "logo_width": 220,
     "favicon": "shopify://shop_images/star.svg",
     "type_header_font": "assistant_n4",
@@ -147,35 +147,35 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FEFAFF",
+          "background": "#fefaff",
           "background_gradient": "",
-          "text": "#5C468F",
-          "button": "#6B55BA",
+          "text": "#5c468f",
+          "button": "#6b55ba",
           "button_label": "#ffffff",
-          "secondary_button_label": "#55437D",
-          "shadow": "#55437D"
+          "secondary_button_label": "#55437d",
+          "shadow": "#55437d"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#6B55BA",
+          "background": "#6b55ba",
           "background_gradient": "",
-          "text": "#FFFFFF",
-          "button": "#FFFFFF",
-          "button_label": "#55437D",
-          "secondary_button_label": "#FFFFFF",
-          "shadow": "#55437D"
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#55437d",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#55437d"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#FCF6FE",
+          "background": "#fcf6fe",
           "background_gradient": "",
-          "text": "#5C468F",
-          "button": "#55437D",
-          "button_label": "#FFFFFF",
-          "secondary_button_label": "#55437D",
-          "shadow": "#55437D"
+          "text": "#5c468f",
+          "button": "#55437d",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#55437d",
+          "shadow": "#55437d"
         }
       }
     }

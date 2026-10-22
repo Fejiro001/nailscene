@@ -1,0 +1,14 @@
+{% liquid
+  assign scene_status = 'offline'
+
+  if product.available
+    assign scene_status = 'online'
+  elsif product.metafields.custom.restocking.value == true
+    assign scene_status = 'brb'
+  endif
+%}
+
+<p class="{{ class_name }} is-{{ scene_status }}">
+  STATUS: {{ scene_status | upcase }}
+  <span aria-hidden="true">✦</span>
+</p>

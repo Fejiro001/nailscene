@@ -513,3 +513,200 @@ body:has(.nailscene-collection-hero)
     transform: none;
   }
 }
+
+
+/* =====================================
+   NAILSCENE DIRECTORY WINDOW
+===================================== */
+
+.nailscene-directory {
+  width: 90%;
+  max-width: 1450px;
+  margin: 15px auto 35px;
+
+  padding: 5px;
+
+  border: 2px solid #6953ba;
+  border-radius: 7px;
+
+  background: #fefaff;
+
+  box-shadow: 5px 5px 0 #c0a8eb;
+}
+
+/* Window title bar */
+
+.nailscene-directory__titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #9572d3;
+
+  background: linear-gradient(
+    180deg,
+    #fffaff,
+    #ead7fa 35%,
+    #c7a7ed
+  );
+
+  color: #49336e;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Folder information */
+
+.nailscene-directory__heading {
+  padding: 32px 25px 24px;
+
+  border-bottom: 1px solid #c0a8eb;
+
+  background: linear-gradient(
+    180deg,
+    #fcf8ff,
+    #f3e9ff
+  );
+
+  text-align: center;
+}
+
+.nailscene-directory__heading p {
+  margin: 0 0 12px;
+
+  color: #6953ba;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.nailscene-directory__heading h2 {
+  margin: 0 0 12px;
+
+  color: #55437d;
+
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.nailscene-directory__heading span {
+  color: #6953ba;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+/* Filters and product cards */
+
+.nailscene-directory__body {
+  padding: 12px 22px 25px;
+
+  background: #faf6ff;
+}
+
+body:has(.nailscene-collection-hero)
+.nailscene-directory .facets-wrapper.page-width,
+body:has(.nailscene-collection-hero)
+.nailscene-directory .collection.page-width {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Dynamic file number in product window title bar */
+
+body:has(.nailscene-collection-hero)
+.nailscene-directory #product-grid
+.card-wrapper[data-nailscene-file]::before {
+  content: '✦ ' attr(data-nailscene-file);
+}
+
+/* File label inside product card */
+
+.nailscene-collection__file-label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #6953ba;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Dynamic product availability */
+
+.nailscene-collection__status {
+  margin: 0 0 12px;
+
+  color: #47785b;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.nailscene-collection__status.is-offline {
+  color: #9b4368;
+}
+
+/* Directory bottom bar */
+
+.nailscene-directory__statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  padding: 12px 15px;
+
+  border-top: 1px solid #c0a8eb;
+
+  background: #fffaff;
+
+  color: #6953ba;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+/* Mobile */
+
+@media (max-width: 749px) {
+  .nailscene-directory {
+    width: calc(100% - 24px);
+    margin: 12px auto 25px;
+  }
+
+  .nailscene-directory__titlebar {
+    font-size: 9px;
+  }
+
+  .nailscene-directory__heading {
+    padding: 25px 12px 20px;
+  }
+
+  .nailscene-directory__body {
+    padding: 10px 12px 20px;
+  }
+
+  .nailscene-directory__statusbar {
+    flex-wrap: wrap;
+    font-size: 8px;
+  }
+}

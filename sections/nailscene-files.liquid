@@ -19,7 +19,20 @@
 
     <div class="nailscene-files__container">
       <header class="nailscene-files__heading">
-        <h2>SCENE_001 <span>// THE FIRST FILES</span></h2>
+        {% assign scene_collection = collections['scene-files'] %}
+
+        {% assign folder_title = scene_collection.metafields.custom.folder_title.value
+          | default: 'SCENE_001 // THE FIRST FOLDER'
+        %}
+
+        {% assign folder_parts = folder_title | split: ' // ' %}
+        <h2>
+          {{ folder_parts[0] | escape }}
+
+          {% if folder_parts.size > 1 %}
+            <span>// {{ folder_parts[1] | escape }}</span>
+          {% endif %}
+        </h2>
 
         <p>
           {% if files_collection != blank %}
@@ -49,7 +62,7 @@
                   </a>
                 </h3>
 
-                <p class="nailscene-file__status">STATUS: ONLINE <span aria-hidden="true">✦</span></p>
+                {% render 'nailscene-product-status', product: product, class_name: 'nailscene-file__status' %}
               </div>
 
               <a href="{{ product.url }}" class="nailscene-file__image">

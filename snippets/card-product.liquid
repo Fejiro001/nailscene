@@ -42,7 +42,12 @@
   -%}
 
   <product-component view-event-payload="{{ card_product | standard_event_data: 'view', context: product_view_context | escape }}">
-    <div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div
+      class="card-wrapper product-card-wrapper underline-links-hover"
+      {% if nailscene_file_label != blank %}
+        data-nailscene-file="{{ nailscene_file_label | escape }}"
+      {% endif %}
+    >
       <div
         class="
           card card--{{ settings.card_style }}
@@ -110,6 +115,12 @@
           {%- endif -%}
           <div class="card__content">
             <div class="card__information">
+              {% if nailscene_file_label != blank %}
+                <span class="nailscene-collection__file-label">
+                  {{ nailscene_file_label }}
+                </span>
+              {% endif %}
+
               <h3
                 class="card__heading"
                 {% if card_product.featured_media == null and settings.card_style == 'standard' %}
@@ -125,6 +136,13 @@
                   {{ card_product.title | escape }}
                 </a>
               </h3>
+
+              {% if nailscene_file_label != blank %}
+                {% render 'nailscene-product-status',
+                  product: card_product,
+                  class_name: 'nailscene-collection__status'
+                %}
+              {% endif %}
             </div>
             <div class="card__badge {{ settings.badge_position }}">
               {%- if card_product.available == false -%}

@@ -1,0 +1,190 @@
+/* ========================================
+   NAILSCENE — CART PAGE
+   ======================================== */
+
+cart-items,
+#main-cart-footer {
+  --scene-ink: #55437d;
+  --scene-purple: #6b55ba;
+  --scene-border: #c0a8eb;
+  --scene-white: #fefaff;
+
+  color: var(--scene-ink);
+}
+
+/* Main cart window */
+cart-items:not(.is-empty) {
+  padding-bottom: 0 !important;
+}
+
+cart-items > .page-width,
+#main-cart-footer > .page-width {
+  max-width: 1180px;
+  width: calc(100% - 32px);
+  padding: 0;
+  margin-inline: auto;
+  background: var(--scene-white);
+  border: 1px solid var(--scene-border);
+  box-shadow: 5px 5px 0 #c0a8eb;
+}
+
+cart-items > .page-width {
+  border-bottom: none;
+}
+
+#main-cart-footer > .page-width {
+  border-top: none;
+}
+
+/* Retro title bar */
+.nailscene-cart__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(
+    180deg,
+    #fcf6fe 0%,
+    #ddbbee 45%,
+    #c0a8eb 100%
+  );
+  border-bottom: 1px solid #9575c6;
+  color: var(--scene-ink);
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-cart__controls {
+  letter-spacing: 0.3em;
+  white-space: nowrap;
+}
+
+/* Cart heading */
+cart-items .title-wrapper-with-link {
+  padding: 28px 32px 12px;
+  margin: 0;
+}
+
+cart-items .title--primary {
+  margin: 0;
+  color: var(--scene-ink);
+  font-family: "Oxanium", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+cart-items .underlined-link {
+  color: var(--scene-purple);
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+}
+
+/* Product table */
+cart-items .cart__contents {
+  padding: 0 32px 24px;
+}
+
+cart-items .cart-items th {
+  color: var(--scene-purple);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+cart-items .cart-item {
+  border-bottom: 1px solid #e7daf4;
+}
+
+cart-items .cart-item__image-container {
+  border: 1px solid #e7daf4;
+  background: #ffffff;
+}
+
+cart-items .cart-item__name {
+  color: var(--scene-ink);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+cart-items .product-option,
+cart-items .price {
+  color: var(--scene-ink);
+}
+
+/* Quantity controls */
+cart-items .quantity {
+  border: 1px solid var(--scene-border);
+  background: #ffffff;
+}
+
+cart-items .quantity::before,
+cart-items .quantity::after {
+  box-shadow: none;
+}
+
+/* Cart summary */
+#main-cart-footer .cart__footer {
+  padding: 24px 32px 32px;
+  border-top: 1px solid #e7daf4;
+}
+
+#main-cart-footer .totals {
+  color: var(--scene-ink);
+}
+
+#main-cart-footer .totals__total,
+#main-cart-footer .totals__total-value {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+/* Checkout button */
+#main-cart-footer .cart__checkout-button {
+  min-height: 52px;
+  border: 1px solid #7656ad;
+  border-radius: 0;
+  background: linear-gradient(
+    180deg,
+    #f4e7ff 0%,
+    #d9b9f4 55%,
+    #b997e7 100%
+  );
+  color: var(--scene-ink);
+  box-shadow: 4px 4px 0 #55437d;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#main-cart-footer .cart__checkout-button::after {
+  box-shadow: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  cart-items > .page-width,
+  #main-cart-footer > .page-width {
+    width: calc(100% - 20px);
+  }
+
+  .nailscene-cart__titlebar {
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  cart-items .title-wrapper-with-link {
+    padding: 20px 16px 12px;
+  }
+
+  cart-items .cart__contents {
+    padding: 0 16px 20px;
+  }
+
+  #main-cart-footer .cart__footer {
+    padding: 24px 16px;
+  }
+}

@@ -30,6 +30,10 @@
   view-event-payload="{{ cart | standard_event_data: 'view', context: 'page' | escape }}"
 >
   <div class="page-width">
+    <div class="nailscene-cart__titlebar" aria-hidden="true">
+      <span>✦ NAILSCENE.EXE / YOUR BAG</span>
+      <span class="nailscene-cart__controls">─ □ ×</span>
+    </div>
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
@@ -113,7 +117,10 @@
 
                       <div class="cart-item__title">
                         <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
-                        {%- assign cart_disclosure_modal_id = 'CartDisclosureModal-cart-' | append: item.key | replace: ':', '-' -%}
+                        {%- assign cart_disclosure_modal_id = 'CartDisclosureModal-cart-'
+                          | append: item.key
+                          | replace: ':', '-'
+                        -%}
                         {%- render 'cart-disclosure-indicator',
                           product: item.product,
                           modal_id: cart_disclosure_modal_id

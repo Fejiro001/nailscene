@@ -8,6 +8,7 @@
   Usage:
   {% render 'cart-notification' %}
 {% endcomment %}
+{{ 'nailscene-cart-notification.css' | asset_url | stylesheet_tag }}
 
 <cart-notification>
   <div class="cart-notification-wrapper{% if desktop_menu_type != 'drawer' %} page-width{% endif %}">
@@ -19,6 +20,10 @@
       role="dialog"
       tabindex="-1"
     >
+      <div class="nailscene-notification__titlebar" aria-hidden="true">
+        <span>✦ NAILSCENE.EXE / FILE ADDED</span>
+        <span>🗕 🗖 ✖</span>
+      </div>
       <div class="cart-notification__header">
         <h2 class="cart-notification__heading caption-large text-body">
           {{- 'icon-checkmark.svg' | inline_asset_content -}}

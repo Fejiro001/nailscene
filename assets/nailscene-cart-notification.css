@@ -1,0 +1,127 @@
+/* ========================================
+   NAILSCENE — CART NOTIFICATION
+   ======================================== */
+
+.cart-notification {
+  padding: 0;
+  border: 1px solid #a78ada;
+  border-radius: 0;
+  background: #fefaff;
+  color: #55437d;
+  box-shadow: 5px 5px 0 #c0a8eb;
+  overflow: hidden;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Retro desktop title bar */
+.nailscene-notification__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px;
+  background: linear-gradient(180deg, #fcf6fe 0%, #ddbbee 50%, #c0a8eb 100%);
+  border-bottom: 1px solid #a78ada;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Confirmation heading */
+.cart-notification__header {
+  padding: 20px 22px 0;
+  align-items: center;
+}
+
+.cart-notification__heading {
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cart-notification__heading .icon-checkmark {
+  color: #458060;
+}
+
+/* Close button */
+.cart-notification__close {
+  margin: 0;
+  color: #55437d;
+}
+
+/* Product preview */
+.cart-notification-product {
+  padding: 18px 22px 20px;
+  border-bottom: 1px solid #e7daf4;
+}
+
+.cart-notification-product__image {
+  border: 1px solid #e7daf4;
+}
+
+.cart-notification-product__name {
+  color: #55437d;
+  font-weight: 700;
+}
+
+/* Action area */
+.cart-notification__links {
+  padding: 12px 22px 22px;
+}
+
+.cart-notification__links .button {
+  min-height: 44px;
+  border-radius: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.cart-notification__links .button::before,
+.cart-notification__links .button::after {
+  box-shadow: none;
+}
+
+/* VIEW CART — secondary button */
+#cart-notification-button {
+  border: 1px solid #a78ada;
+  background: #ffffff;
+  color: #55437d;
+}
+
+/* CHECK OUT — primary retro button */
+#cart-notification-form .button {
+  border: 1px solid #7656ad;
+  background: linear-gradient(180deg, #f4e7ff, #d9b9f4 55%, #b997e7);
+  color: #55437d;
+  box-shadow: 3px 3px 0 #55437d;
+}
+
+/* Continue shopping */
+.cart-notification__links .button-label {
+  color: #6b55ba;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+/* Small screens */
+@media screen and (max-width: 749px) {
+  .cart-notification {
+    max-width: 100%;
+  }
+
+  .nailscene-notification__titlebar {
+    font-size: 9px;
+    padding: 10px;
+  }
+
+  .cart-notification__header,
+  .cart-notification-product,
+  .cart-notification__links {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

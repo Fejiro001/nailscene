@@ -276,12 +276,14 @@
 ===================================== */
 
 .nailscene-product .product__accordion {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0;
+  border: 1px solid #c0a8eb;
+  background: transparent;
+}
 
-  border: 1px solid #bda2e4;
-  border-bottom: 0;
-
-  background: #f9f3ff;
+.nailscene-product .product__accordion + .product__accordion {
+  border-top: 0;
 }
 
 .nailscene-product .product__accordion:last-child {
@@ -289,7 +291,13 @@
 }
 
 .nailscene-product .product__accordion summary {
-  padding: 13px 16px;
+  padding: 16px 20px;
+  min-height: auto;
+}
+
+.nailscene-product .product__accordion .accordion__content {
+  margin: 0;
+  padding: 0 20px 18px;
 }
 
 .nailscene-product .accordion__title {

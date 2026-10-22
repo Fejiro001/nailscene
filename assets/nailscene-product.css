@@ -1,0 +1,392 @@
+/* =====================================
+   NAILSCENE PRODUCT PAGE
+===================================== */
+
+.nailscene-product {
+  background: linear-gradient(180deg, #fefaff, #f7f0ff);
+
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+}
+
+.nailscene-product > .page-width {
+  max-width: 1450px;
+}
+
+.nailscene-product .product {
+  align-items: start;
+  gap: 35px;
+}
+
+.nailscene-product .product__info-container {
+  color: #55437d;
+}
+
+/* FILE INFORMATION */
+
+.nailscene-product__file-label {
+  margin: 0 0 8px;
+
+  color: #6953ba;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-product .product__title {
+  margin-bottom: 8px;
+}
+
+.nailscene-product .product__title h1 {
+  margin: 0;
+
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.nailscene-product__folder {
+  margin: 0 0 15px;
+
+  color: #6953ba;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* PRODUCT STATUS */
+
+.nailscene-product__status {
+  margin: 0 0 18px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nailscene-product__status.is-online {
+  color: #47785b;
+}
+
+.nailscene-product__status.is-brb {
+  color: #8060bc;
+}
+
+.nailscene-product__status.is-offline {
+  color: #9b4368;
+}
+
+/* PRICE AND DESCRIPTION */
+
+.nailscene-product .price,
+.nailscene-product .price-item {
+  color: #49336e;
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nailscene-product .product__description {
+  color: #49336e;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.nailscene-product .product__description p {
+  margin-top: 0;
+}
+
+/* =====================================
+   PRODUCT GALLERY
+===================================== */
+
+.nailscene-product .product__media-wrapper {
+  min-width: 0;
+}
+
+.nailscene-product .product__media {
+  overflow: hidden;
+
+  border: 1px solid #c0a8eb;
+  border-radius: 3px;
+
+  background: #fefaff;
+
+  box-shadow: 3px 3px 0 #e1d1f4;
+}
+
+.nailscene-product .product__media img {
+  object-fit: contain;
+}
+
+.nailscene-product .thumbnail {
+  overflow: hidden;
+
+  border: 1px solid #bba1e6;
+  border-radius: 3px;
+
+  background: #fffaff;
+}
+
+.nailscene-product .thumbnail[aria-current] {
+  box-shadow: 0 0 0 2px #6953ba;
+}
+
+/* Vertical thumbnails on desktop */
+
+@media (min-width: 990px) {
+  .nailscene-product media-gallery[data-desktop-layout='thumbnail'] {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+  }
+
+  .nailscene-product media-gallery[data-desktop-layout='thumbnail'] #GalleryViewer-main {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .nailscene-product media-gallery[data-desktop-layout='thumbnail'] .thumbnail-slider {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .nailscene-product media-gallery[data-desktop-layout='thumbnail'] .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+    width: 100%;
+    max-height: 540px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .nailscene-product media-gallery[data-desktop-layout='thumbnail'] .thumbnail-list__item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nailscene-product media-gallery[data-desktop-layout='thumbnail'] .thumbnail-slider .slider-button {
+    display: none;
+  }
+}
+
+/* =====================================
+   SIZE SELECTOR
+===================================== */
+
+.nailscene-product .product-form__input {
+  margin-bottom: 18px;
+}
+
+.nailscene-product .product-form__input .form__label {
+  margin-bottom: 10px;
+
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nailscene-product .product-form__input input[type='radio'] + label {
+  min-width: 56px;
+  padding: 11px 16px;
+
+  border: 1px solid #9572d3;
+  border-radius: 7px;
+
+  background: #fffaff;
+  color: #55437d;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nailscene-product .product-form__input input[type='radio']:checked + label {
+  background: linear-gradient(180deg, #ead9fb, #c9aff0);
+
+  border-color: #6953ba;
+  color: #55437d;
+  box-shadow: inset 1px 1px 0 #ffffff;
+}
+
+/* QUANTITY */
+
+.nailscene-product .quantity {
+  border: 1px solid #9572d3;
+  background: #fffaff;
+}
+
+.nailscene-product .quantity__input,
+.nailscene-product .quantity__button {
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ADD TO SCENE BUTTON */
+
+.nailscene-product .product-form__submit {
+  min-height: 56px;
+
+  border: 2px solid #55437d;
+  border-radius: 4px;
+
+  background: linear-gradient(180deg, #fffaff 0%, #ead4fa 45%, #c79deb 100%);
+
+  box-shadow:
+    inset 2px 2px 0 #ffffff,
+    4px 4px 0 #55437d;
+
+  color: #55437d;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.nailscene-product .product-form__submit::before,
+.nailscene-product .product-form__submit::after {
+  box-shadow: none;
+}
+
+.nailscene-product .product-form__submit:hover {
+  background: linear-gradient(180deg, #fffaff, #ddbbee);
+}
+
+/* =====================================
+   INFORMATION ACCORDIONS
+===================================== */
+
+.nailscene-product .product__accordion {
+  margin: 0;
+
+  border: 1px solid #bda2e4;
+  border-bottom: 0;
+
+  background: #f9f3ff;
+}
+
+.nailscene-product .product__accordion:last-child {
+  border-bottom: 1px solid #bda2e4;
+}
+
+.nailscene-product .product__accordion summary {
+  padding: 13px 16px;
+}
+
+.nailscene-product .accordion__title {
+  color: #55437d;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nailscene-product .accordion__content {
+  padding: 0 16px 16px;
+
+  color: #49336e;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   BRB AND OFFLINE STATES
+===================================== */
+
+.nailscene-product__unavailable {
+  margin: 20px 0 25px;
+}
+
+.nailscene-product__unavailable h2 {
+  margin: 0 0 12px;
+
+  color: #55437d;
+
+  font-family: 'Oxanium', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.nailscene-product__unavailable p {
+  margin: 0 0 16px;
+
+  color: #49336e;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.nailscene-product__restock-date {
+  font-weight: 700;
+}
+
+.nailscene-product__contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 12px;
+  padding: 12px 20px;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+}
+
+/* Hide unavailable purchasing controls */
+
+.nailscene-product--unavailable variant-selects,
+.nailscene-product--unavailable .product-form__quantity,
+.nailscene-product--unavailable .product-form__buttons {
+  display: none;
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 749px) {
+  .nailscene-product .product {
+    gap: 20px;
+  }
+
+  .nailscene-product .product__title h1 {
+    font-size: 34px;
+  }
+
+  .nailscene-product .price,
+  .nailscene-product .price-item {
+    font-size: 21px;
+  }
+
+  .nailscene-product__status {
+    font-size: 12px;
+  }
+
+  .nailscene-product .product-form__input input[type='radio'] + label {
+    min-width: 48px;
+    padding: 10px 12px;
+  }
+}

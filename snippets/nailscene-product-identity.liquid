@@ -1,0 +1,63 @@
+{% liquid
+  assign file_label = product.metafields.custom.file_label.value
+  assign folder_title = 'SCENE_001 // THE FIRST FOLDER'
+
+  for scene_collection in product.collections
+    if scene_collection.metafields.custom.folder_title.value != blank
+      assign folder_title = scene_collection.metafields.custom.folder_title.value
+      break
+    endif
+  endfor
+
+  assign restocking = product.metafields.custom.restocking.value
+  assign restock_date = product.metafields.custom.restock_date.value
+%}
+
+{% if file_label != blank %}
+  <p class="nailscene-product__file-label">
+    {{ file_label | escape }}
+  </p>
+{% endif %}
+
+<div class="product__title" {{ block.shopify_attributes }}>
+  <h1>{{ product.title | escape }}</h1>
+</div>
+
+<p class="nailscene-product__folder">
+  {{ folder_title | escape }}
+</p>
+
+{% render 'nailscene-product-status', product: product, class_name: 'nailscene-product__status' %}
+
+{% unless product.available %}
+  <div class="nailscene-product__unavailable">
+    {% if restocking == true %}
+      <h2>RECONNECTING SOON.</h2>
+
+      <p>This set is currently offline while we prepare the next restock.</p>
+
+      {% if restock_date != blank %}
+        <p class="nailscene-product__restock-date">
+          RESTOCK DATE:
+          <time datetime="{{ restock_date | date: '%Y-%m-%d' }}">
+            {{ restock_date | date: '%b %d, %Y' }}
+          </time>
+        </p>
+      {% endif %}
+
+    {% else %}
+      <h2>THIS FILE IS OFFLINE.</h2>
+
+      <p>She's out of the scene for now. Explore our other sets or ask about future availability.</p>
+    {% endif %}
+
+    {% if pages.contact != blank %}
+      <a
+        href="{{ pages['contact'].url }}"
+        class="nailscene-retro-button nailscene-product__contact"
+      >
+        ASK ABOUT RESTOCK →
+      </a>
+    {% endif %}
+  </div>
+{% endunless %}

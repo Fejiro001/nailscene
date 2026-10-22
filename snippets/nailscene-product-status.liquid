@@ -4,7 +4,7 @@
   if product.available
     assign scene_status = 'online'
   elsif product.metafields.custom.restocking.value == true
-    assign scene_status = 'brb'
+    assign scene_status = 'brb...'
   endif
 %}
 

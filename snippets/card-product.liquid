@@ -115,12 +115,6 @@
           {%- endif -%}
           <div class="card__content">
             <div class="card__information">
-              {% if nailscene_file_label != blank %}
-                <span class="nailscene-collection__file-label">
-                  {{ nailscene_file_label }}
-                </span>
-              {% endif %}
-
               <h3
                 class="card__heading"
                 {% if card_product.featured_media == null and settings.card_style == 'standard' %}
@@ -136,13 +130,6 @@
                   {{ card_product.title | escape }}
                 </a>
               </h3>
-
-              {% if nailscene_file_label != blank %}
-                {% render 'nailscene-product-status',
-                  product: card_product,
-                  class_name: 'nailscene-collection__status'
-                %}
-              {% endif %}
             </div>
             <div class="card__badge {{ settings.badge_position }}">
               {%- if card_product.available == false -%}
@@ -165,6 +152,11 @@
         </div>
         <div class="card__content">
           <div class="card__information">
+            {% if nailscene_file_label != blank %}
+              <span class="nailscene-collection__file-label">
+                {{ nailscene_file_label }}
+              </span>
+            {% endif %}
             <h3
               class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
               {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -180,6 +172,9 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            {% if nailscene_file_label != blank %}
+              {% render 'nailscene-product-status', product: card_product, class_name: 'nailscene-collection__status' %}
+            {% endif %}
             <div class="card-information">
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

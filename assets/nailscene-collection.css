@@ -710,3 +710,68 @@ body:has(.nailscene-collection-hero)
     font-size: 8px;
   }
 }
+
+
+/* =====================================
+   COMPACT SCENE FILE PRODUCT CARDS
+===================================== */
+
+/* Reduce image height to a 4:3 ratio */
+body:has(.nailscene-collection-hero)
+#product-grid .card__inner {
+  --ratio-percent: 75% !important;
+}
+
+/* Reduce spacing around the product image */
+body:has(.nailscene-collection-hero)
+#product-grid .card__media {
+  top: 10px;
+  bottom: 10px;
+  width: calc(100% - 20px);
+  margin: 0 10px;
+}
+
+body:has(.nailscene-collection-hero)
+#product-grid .card__media img {
+  padding: 8px;
+  object-fit: contain;
+}
+
+/* Compact product information */
+body:has(.nailscene-collection-hero)
+#product-grid .card > .card__content {
+  padding: 14px 16px 17px;
+}
+
+/* Product name */
+body:has(.nailscene-collection-hero)
+#product-grid .card__heading {
+  margin-bottom: 7px;
+  font-size: 21px;
+}
+
+/* File label */
+body:has(.nailscene-collection-hero)
+#product-grid .nailscene-collection__file-label {
+  margin-bottom: 5px;
+}
+
+/* Stock status */
+body:has(.nailscene-collection-hero)
+#product-grid .nailscene-collection__status {
+  margin-bottom: 8px;
+}
+
+/* Price */
+body:has(.nailscene-collection-hero)
+#product-grid .price {
+  margin-top: 6px;
+}
+
+/* VIEW FILE visual button */
+body:has(.nailscene-collection-hero)
+#product-grid .card > .card__content
+.card__information::after {
+  margin-top: 12px;
+  padding: 8px 14px;
+}

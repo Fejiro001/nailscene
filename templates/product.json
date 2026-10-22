@@ -12,14 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -46,26 +38,68 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
-        "share": {
-          "type": "share",
+        "collapsible_tab_BefyXr": {
+          "type": "collapsible_tab",
           "settings": {
-            "share_label": "Share"
+            "heading": "WHAT'S INCLUDED",
+            "icon": "none",
+            "content": "<p>Items included with each press-on nail set</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_LcazKB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SIZING",
+            "icon": "none",
+            "content": "<p>Available sizes and how customers find their fit</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_BNRwKJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "APPLICATION",
+            "icon": "none",
+            "content": "<p>Instructions for applying the nails</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_7JMewx": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "REMOVAL",
+            "icon": "none",
+            "content": "<p>Instructions for safely removing the nails</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_NfA7Af": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SHIPPING",
+            "icon": "none",
+            "content": "<p>Processing times, shipping options, and delivery information</p>",
+            "page": ""
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "share"
+        "collapsible_tab_BefyXr",
+        "collapsible_tab_LcazKB",
+        "collapsible_tab_BNRwKJ",
+        "collapsible_tab_7JMewx",
+        "collapsible_tab_NfA7Af"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -85,6 +119,7 @@
     },
     "disclosures": {
       "type": "disclosures",
+      "disabled": true,
       "settings": {
         "heading": "Disclosures",
         "heading_size": "h2",

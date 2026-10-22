@@ -43,15 +43,10 @@ cart-items > .page-width {
   justify-content: space-between;
   gap: 12px;
   padding: 12px 18px;
-  background: linear-gradient(
-    180deg,
-    #fcf6fe 0%,
-    #ddbbee 45%,
-    #c0a8eb 100%
-  );
+  background: linear-gradient(180deg, #fcf6fe 0%, #ddbbee 45%, #c0a8eb 100%);
   border-bottom: 1px solid #9575c6;
   color: var(--scene-ink);
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -71,14 +66,14 @@ cart-items .title-wrapper-with-link {
 cart-items .title--primary {
   margin: 0;
   color: var(--scene-ink);
-  font-family: "Oxanium", sans-serif;
+  font-family: 'Oxanium', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
 }
 
 cart-items .underlined-link {
   color: var(--scene-purple);
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 12px;
 }
 
@@ -89,7 +84,7 @@ cart-items .cart__contents {
 
 cart-items .cart-items th {
   color: var(--scene-purple);
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 700;
 }
 
@@ -104,7 +99,7 @@ cart-items .cart-item__image-container {
 
 cart-items .cart-item__name {
   color: var(--scene-ink);
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -137,7 +132,7 @@ cart-items .quantity::after {
 
 #main-cart-footer .totals__total,
 #main-cart-footer .totals__total-value {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 700;
 }
 
@@ -146,15 +141,10 @@ cart-items .quantity::after {
   min-height: 52px;
   border: 1px solid #7656ad;
   border-radius: 0;
-  background: linear-gradient(
-    180deg,
-    #f4e7ff 0%,
-    #d9b9f4 55%,
-    #b997e7 100%
-  );
+  background: linear-gradient(180deg, #f4e7ff 0%, #d9b9f4 55%, #b997e7 100%);
   color: var(--scene-ink);
   box-shadow: 4px 4px 0 #55437d;
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -162,6 +152,11 @@ cart-items .quantity::after {
 
 #main-cart-footer .cart__checkout-button::after {
   box-shadow: none;
+}
+
+/* Space between cart window and site footer */
+#main-cart-footer {
+  padding-bottom: 64px;
 }
 
 /* Mobile */
@@ -186,5 +181,9 @@ cart-items .quantity::after {
 
   #main-cart-footer .cart__footer {
     padding: 24px 16px;
+  }
+
+  #main-cart-footer {
+    padding-bottom: 40px;
   }
 }

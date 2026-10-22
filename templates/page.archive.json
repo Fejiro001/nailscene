@@ -1,12 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "nailscene-archive",
+      "blocks": {
+        "scene_W6DMiq": {
+          "type": "scene",
+          "settings": {
+            "collection": "scene-files"
+          }
+        }
+      },
+      "block_order": [
+        "scene_W6DMiq"
+      ],
       "settings": {
         "heading": "SCENE ARCHIVE",
         "subtitle": "PREVIOUS SCENES // PRESERVED FILES"
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

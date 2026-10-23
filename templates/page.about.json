@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-about",
+      "settings": {
+        "tagline": "Every scene deserves its finishing touch. ✦"
+      },
+      "blocks": {
+        "chapter1": {
+          "type": "chapter",
+          "settings": {
+            "heading": "THE GIRL BEHIND THE FILES",
+            "system_message": "",
+            "content": "<p>Hi, I'm Tega — the founder, creator, and nail enthusiast behind NailScene.</p><p>I've always believed that an outfit isn't truly complete without the right set of nails. There's just something about finding a design that matches your mood, complements your outfit, or makes you feel a little more <em>you</em>. And when those nails are unique? Even better.</p><p>But I also know that finding those statement-making sets can come with a statement-making price tag. I wanted nails that felt special, creative, and a little out of the ordinary without having to spend an arm and a leg to wear them.</p><p>And that's where the idea for NailScene began.</p>"
+          }
+        },
+        "chapter2": {
+          "type": "chapter",
+          "settings": {
+            "heading": "HOW THE SCENE STARTED",
+            "system_message": "LOADING... THE IDEA",
+            "content": "<p>What started with a love for nail art grew into a vision for something of my own: a space where creativity meets self-expression, and where unique nails feel a little more accessible.</p><p>I wanted to create sets that feel like their own little world — designs with personality, details that catch your eye, and styles that let you express a different side of yourself whenever you feel like it.</p><p>That vision became <strong>NailScene</strong>: a place for handcrafted press-on nails that bring a little extra something to your everyday look, your special occasions, and every scene in between.</p>"
+          }
+        },
+        "chapter3": {
+          "type": "chapter",
+          "settings": {
+            "heading": "MORE THAN JUST NAILS",
+            "system_message": "SYSTEM MESSAGE: YOUR STYLE, YOUR RULES",
+            "content": "<p>To me, nails are more than an accessory. They're a finishing touch, a mood, a conversation starter, and sometimes the smallest detail that makes you feel completely put together.</p><p>Whether you're dressing up, keeping it casual, stepping into a new era, or simply treating yourself, I want NailScene to help you find a set that feels like <em>your</em> scene — without the luxury price tag.</p><p>Every design is an opportunity to play with your style, try something different, and have a little fun with self-expression.</p>"
+          }
+        },
+        "chapter4": {
+          "type": "chapter",
+          "settings": {
+            "heading": "WELCOME TO YOUR SCENE",
+            "system_message": "CONNECTION ESTABLISHED ✦",
+            "content": "<p>NailScene is my little corner of the internet, built from a love for nails and the belief that getting creative with your style shouldn't have to break the bank.</p><p>Thank you for being here, supporting my dream, and becoming part of this growing community. Whether you've been here since the first file or just logged in, I'm so happy you're here.</p><p>There's always another look to try, another mood to explore, and another scene to create.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "chapter1",
+        "chapter2",
+        "chapter3",
+        "chapter4"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

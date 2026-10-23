@@ -1,0 +1,112 @@
+{{ 'nailscene-about.css' | asset_url | stylesheet_tag }}
+
+<section class="nailscene-about" aria-labelledby="nailscene-about-heading">
+  <div class="nailscene-about__window">
+    <div class="nailscene-about__titlebar">
+      <span>✦ NAILSCENE.EXE / ORIGIN FILE_000</span>
+      <span class="nailscene-about__controls" aria-hidden="true">─ □ ×</span>
+    </div>
+
+    <div class="nailscene-about__content">
+      <div class="nailscene-about__intro">
+        <div class="nailscene-about__intro-copy">
+          <p class="nailscene-about__eyebrow">ORIGIN FILE_000 // THE STORY BEHIND THE SCENE</p>
+          <h1 id="nailscene-about-heading">ABOUT NAILSCENE.EXE</h1>
+          <p class="nailscene-about__tagline">{{ section.settings.tagline | escape }}</p>
+          <div class="nailscene-about__system-pill">✦ SYSTEM STATUS: ONLINE</div>
+        </div>
+
+        <figure class="nailscene-about__art">
+          {% if section.settings.hero_image != blank %}
+            {{
+              section.settings.hero_image
+              | image_url: width: 1100
+              | image_tag: loading: 'lazy', widths: '360, 540, 760, 1100', sizes: '(min-width: 990px) 38vw, 90vw', alt: 'NailScene brand artwork'
+            }}
+          {% else %}
+            <img src="{{ 'nailscene-cd.png' | asset_url }}" alt="Holographic NailScene compact disc" width="520" height="520" loading="lazy">
+          {% endif %}
+          <figcaption>ORIGIN MEDIA // NAILSCENE</figcaption>
+        </figure>
+      </div>
+
+      <div class="nailscene-about__chapters">
+        {% for block in section.blocks %}
+          <article class="nailscene-about__chapter" {{ block.shopify_attributes }}>
+            <div class="nailscene-about__chapter-index" aria-hidden="true">
+              <span>FILE_00{{ forloop.index }}</span>
+              <span>✦</span>
+            </div>
+            <div class="nailscene-about__chapter-content">
+              {% if block.settings.system_message != blank %}
+                <p class="nailscene-about__system-label">{{ block.settings.system_message | escape }}</p>
+              {% endif %}
+              <h2>{{ block.settings.heading | escape }}</h2>
+              <div class="nailscene-about__prose rte">{{ block.settings.content }}</div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      <div class="nailscene-about__signature">
+        <p class="nailscene-about__closing">YOUR SCENE. YOUR SET.</p>
+        <p class="nailscene-about__founder">— Tega ♡ <span>Founder of NailScene</span></p>
+      </div>
+    </div>
+
+    <div class="nailscene-about__statusbar">
+      <span>ORIGIN FILE_000 // SUCCESSFULLY OPENED</span>
+      <span>CONNECTION ESTABLISHED ✦</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene About",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Intro tagline",
+      "default": "Every scene deserves its finishing touch. ✦"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "About page artwork",
+      "info": "Optional. Defaults to the existing NailScene CD asset."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chapter",
+      "name": "Story chapter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Chapter heading",
+          "default": "THE STORY"
+        },
+        {
+          "type": "text",
+          "id": "system_message",
+          "label": "System message"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Chapter text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "NailScene About"
+    }
+  ]
+}
+{% endschema %}

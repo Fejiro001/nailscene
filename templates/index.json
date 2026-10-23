@@ -14,6 +14,7 @@
       "settings": {
         "heading": "YOUR SCENE. YOUR SET.",
         "description": "Press-on nails made for every mood. New files, new looks, always on scene.",
+        "hero_image": "shopify://shop_images/WhatsAppImage2026-10-18at1.37.21PM_1.jpg",
         "featured_collection": "scene-files"
       }
     },
@@ -59,7 +60,11 @@
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "settings": {
         "heading": "HOW TO ENTER THE SCENE",
         "subtitle": "YOUR NEXT SET IS ONLY THREE STEPS AWAY",
@@ -68,5 +73,10 @@
       }
     }
   },
-  "order": ["nailscene_hero", "nailscene_files", "nailscene_enter", "nailscene_how"]
+  "order": [
+    "nailscene_hero",
+    "nailscene_files",
+    "nailscene_enter",
+    "nailscene_how"
+  ]
 }

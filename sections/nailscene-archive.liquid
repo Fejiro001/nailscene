@@ -29,7 +29,10 @@
             {% endfor %}
 
             <article class="nailscene-archive__card" {{ block.shopify_attributes }}>
-              <a href="{{ scene.url }}" class="nailscene-archive__link">
+              <a
+                href="{{ scene.url }}?view=archive-entry"
+                class="nailscene-archive__link"
+              >
                 <div class="nailscene-archive__folder">
                   <span>✦ {{ folder_title | escape }}</span>
                   <span aria-hidden="true">🗖</span>

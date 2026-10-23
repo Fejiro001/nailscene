@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-archive-entry",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,270 @@
+/* NAILSCENE — INDIVIDUAL ARCHIVE ENTRY */
+
+.nailscene-entry {
+  padding: 64px 24px 96px;
+  background: #fcf6fe;
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+}
+
+.nailscene-entry__window {
+  max-width: 1250px;
+  margin: 0 auto;
+  border: 1px solid #8966c6;
+  background: #fefaff;
+  box-shadow: 6px 6px 0 #c0a8eb;
+}
+
+.nailscene-entry__titlebar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #8966c6;
+  background: linear-gradient(180deg, #fefaff, #ddbbee 55%, #c0a8eb);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nailscene-entry__body {
+  padding: 36px;
+}
+
+.nailscene-entry__back {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #6b55ba;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.nailscene-entry__back:hover {
+  text-decoration: underline;
+}
+
+.nailscene-entry__overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.nailscene-entry__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+  border: 1px solid #d9c7ef;
+  background: #f7f0fb;
+  overflow: hidden;
+}
+
+.nailscene-entry__image img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.nailscene-entry__image > span {
+  font-size: 100px;
+  color: #c0a8eb;
+}
+
+.nailscene-entry__eyebrow {
+  margin: 0 0 16px;
+  font-size: 11px;
+  color: #8067b1;
+  letter-spacing: 0.08em;
+}
+
+.nailscene-entry__information h1 {
+  margin: 0 0 20px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.nailscene-entry__description {
+  margin: 0 0 28px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.nailscene-entry__metadata {
+  border: 1px solid #c0a8eb;
+  margin-bottom: 26px;
+}
+
+.nailscene-entry__metadata > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+  border-bottom: 1px solid #dfd1ef;
+  font-size: 11px;
+}
+
+.nailscene-entry__metadata > div:last-child {
+  border-bottom: 0;
+}
+
+.nailscene-entry__metadata span {
+  color: #8067b1;
+}
+
+.nailscene-entry__metadata strong {
+  text-align: right;
+  font-weight: 700;
+}
+
+.nailscene-entry__metadata .is-online {
+  color: #458060;
+}
+
+.nailscene-entry__metadata .is-brb {
+  color: #ac7a38;
+}
+
+.nailscene-entry__metadata .is-offline {
+  color: #947c9f;
+}
+
+.nailscene-entry__button {
+  display: block;
+  padding: 15px 20px;
+  border: 1px solid #8966c6;
+  background: linear-gradient(180deg, #f5e8ff, #cba8ee);
+  box-shadow: 4px 4px 0 #55437d;
+  color: #55437d;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nailscene-entry__files {
+  margin-top: 48px;
+}
+
+.nailscene-entry__files h2 {
+  margin: 0 0 20px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.nailscene-entry__file-list {
+  border: 1px solid #c0a8eb;
+}
+
+.nailscene-entry__file {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e1d4f0;
+  color: #55437d;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nailscene-entry__file:last-child {
+  border-bottom: 0;
+}
+
+.nailscene-entry__file:hover {
+  background: #f2e8fa;
+}
+
+.nailscene-entry__file-image {
+  flex: 0 0 64px;
+  height: 64px;
+  background: #ffffff;
+}
+
+.nailscene-entry__file-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nailscene-entry__file-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.nailscene-entry__file-info span {
+  font-size: 10px;
+  color: #8067b1;
+}
+
+.nailscene-entry__file-info strong {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.nailscene-entry__file-status {
+  font-size: 10px;
+}
+
+.nailscene-entry__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 24px;
+  font-size: 11px;
+}
+
+.nailscene-entry__pagination a {
+  color: #6b55ba;
+}
+
+.nailscene-entry__statusbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid #c0a8eb;
+  font-size: 10px;
+}
+
+@media (max-width: 749px) {
+  .nailscene-entry {
+    padding: 32px 12px 64px;
+  }
+
+  .nailscene-entry__body {
+    padding: 20px 16px;
+  }
+
+  .nailscene-entry__overview {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .nailscene-entry__image {
+    min-height: 250px;
+  }
+
+  .nailscene-entry__file {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .nailscene-entry__file-status {
+    font-size: 9px;
+  }
+
+  .nailscene-entry__titlebar,
+  .nailscene-entry__statusbar {
+    font-size: 9px;
+  }
+}

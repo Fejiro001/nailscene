@@ -1,0 +1,178 @@
+{{ 'nailscene-archive-entry.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign folder_title = collection.metafields.custom.folder_title.value
+  assign folder_title = folder_title | default: collection.title
+
+  assign scene_image = collection.image
+
+  if scene_image == blank
+    assign scene_image = collection.products.first.featured_image
+  endif
+
+  assign available_count = 0
+  assign restocking_count = 0
+
+  for product in collection.products
+    if product.available
+      assign available_count = available_count | plus: 1
+    elsif product.metafields.custom.restocking.value == true
+      assign restocking_count = restocking_count | plus: 1
+    endif
+  endfor
+
+  assign scene_status = 'OFFLINE'
+
+  if available_count > 0
+    assign scene_status = 'ONLINE'
+  elsif restocking_count > 0
+    assign scene_status = 'BRB'
+  endif
+%}
+
+<section class="nailscene-entry">
+  <div class="nailscene-entry__window">
+    <div class="nailscene-entry__titlebar">
+      <span>✦ NAILSCENE.EXE / ARCHIVE ENTRY</span>
+      <span aria-hidden="true">─ □ ×</span>
+    </div>
+
+    <div class="nailscene-entry__body">
+      <a
+        href="/pages/archive?view=archive"
+        class="nailscene-entry__back"
+      >
+        ← BACK TO ARCHIVE
+      </a>
+
+      <div class="nailscene-entry__overview">
+        <div class="nailscene-entry__image">
+          {% if scene_image != blank %}
+            {{ scene_image | image_url: width: 1000 | image_tag: loading: 'lazy', alt: folder_title }}
+          {% else %}
+            <span aria-hidden="true">✧</span>
+          {% endif %}
+        </div>
+
+        <div class="nailscene-entry__information">
+          <p class="nailscene-entry__eyebrow">ARCHIVE RECORD // {{ collection.handle | upcase | escape }}</p>
+
+          <h1>{{ folder_title | escape }}</h1>
+
+          <p class="nailscene-entry__description">
+            {% if collection.description != blank %}
+              {{ collection.description | strip_html | escape }}
+            {% else %}
+              A PRESERVED NAILSCENE COLLECTION.
+            {% endif %}
+          </p>
+
+          <div class="nailscene-entry__metadata">
+            <div>
+              <span>DIRECTORY</span>
+              <strong>{{ collection.title | escape }}</strong>
+            </div>
+
+            <div>
+              <span>FILES DETECTED</span>
+              <strong>{{ collection.products_count }}</strong>
+            </div>
+
+            <div>
+              <span>STATUS</span>
+              <strong class="is-{{ scene_status | downcase }}"> {{ scene_status }} ✦ </strong>
+            </div>
+          </div>
+
+          <a
+            class="nailscene-entry__button"
+            href="{{ collection.url }}"
+          >
+            SHOP THE FILES →
+          </a>
+        </div>
+      </div>
+
+      <div class="nailscene-entry__files">
+        <h2>FILES IN THIS SCENE</h2>
+
+        {% paginate collection.products by 24 %}
+          <div class="nailscene-entry__file-list">
+            {% for product in collection.products %}
+              <a
+                class="nailscene-entry__file"
+                href="{{ product.url | within: collection }}"
+              >
+                <div class="nailscene-entry__file-image">
+                  {% if product.featured_image %}
+                    {{
+                      product.featured_image
+                      | image_url: width: 160
+                      | image_tag: loading: 'lazy', alt: product.title
+                    }}
+                  {% endif %}
+                </div>
+
+                <div class="nailscene-entry__file-info">
+                  <span>
+                    {{ product.metafields.custom.file_label.value | default: 'SCENE FILE' | escape }}
+                  </span>
+                  <strong>{{ product.title | escape }}</strong>
+                </div>
+
+                <span class="nailscene-entry__file-status">
+                  {% if product.available %}
+                    ONLINE ✦
+                  {% elsif product.metafields.custom.restocking.value == true %}
+                    BRB ✦
+                  {% else %}
+                    OFFLINE ✦
+                  {% endif %}
+                </span>
+
+                <span aria-hidden="true">↗</span>
+              </a>
+
+            {% else %}
+              <p>NO FILES DETECTED.</p>
+            {% endfor %}
+          </div>
+
+          {% if paginate.pages > 1 %}
+            <nav
+              class="nailscene-entry__pagination"
+              aria-label="Archive files pagination"
+            >
+              {% if paginate.previous %}
+                <a href="{{ paginate.previous.url }}">← PREVIOUS</a>
+              {% endif %}
+
+              <span>PAGE {{ paginate.current_page }} / {{ paginate.pages }}</span>
+
+              {% if paginate.next %}
+                <a href="{{ paginate.next.url }}">NEXT →</a>
+              {% endif %}
+            </nav>
+          {% endif %}
+        {% endpaginate %}
+      </div>
+    </div>
+
+    <div class="nailscene-entry__statusbar">
+      <span>NAILSCENE.EXE / FILE RECORD</span>
+      <span>ARCHIVE ACCESS GRANTED ✦</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene Archive Entry",
+  "settings": [],
+  "presets": [
+    {
+      "name": "NailScene Archive Entry"
+    }
+  ]
+}
+{% endschema %}

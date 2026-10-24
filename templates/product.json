@@ -56,7 +56,7 @@
           "settings": {
             "heading": "SIZING",
             "icon": "none",
-            "content": "<p>Available sizes and how customers find their fit</p>",
+            "content": "<p>Measure each natural nail at its widest point and compare your measurements with our XS–L size chart. If you're between sizes, choose the larger size.</p><p><a href=\"/pages/sizing-guide\" title=\"/pages/sizing-guide\">VIEW SIZING GUIDE ↗</a></p>",
             "page": ""
           }
         },
@@ -65,7 +65,7 @@
           "settings": {
             "heading": "APPLICATION",
             "icon": "none",
-            "content": "",
+            "content": "<p>Prep, buff, and cleanse your nails before applying your press-ons. Follow our step-by-step guide for glue or adhesive tab application.</p><p><a href=\"/pages/application-guide\" title=\"/pages/application-guide\">VIEW APPLICATION GUIDE ↗</a></p>",
             "page": ""
           }
         },
@@ -74,7 +74,7 @@
           "settings": {
             "heading": "REMOVAL",
             "icon": "none",
-            "content": "<p>Instructions for safely removing the nails</p>",
+            "content": "<p>Remove your press-ons gently to help protect your natural nails and preserve your set. Follow the full removal instructions before starting.</p><p><a href=\"/pages/removal-guide\" title=\"/pages/removal-guide\">VIEW REMOVAL GUIDE ↗</a></p>",
             "page": ""
           }
         },
@@ -83,7 +83,7 @@
           "settings": {
             "heading": "SHIPPING",
             "icon": "none",
-            "content": "<p>Processing times, shipping options, and delivery information</p>",
+            "content": "<p>Free pickup is available. Eligible orders may qualify for next-day delivery at $7 or same-day delivery at the price shown during checkout. Orders are processed in less than 24 hours.</p><p><a href=\"/pages/delivery\" title=\"/pages/delivery\">VIEW DELIVERY DETAILS ↗</a></p>",
             "page": ""
           }
         }
@@ -122,7 +122,7 @@
       "settings": {
         "heading": "MORE FILES TO EXPLORE",
         "heading_size": "h2",
-        "products_to_show": 2,
+        "products_to_show": 4,
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",

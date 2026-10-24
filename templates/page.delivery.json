@@ -41,7 +41,7 @@
             "title": "STANDARD DELIVERY",
             "mode": "DELIVERY MODE: NEXT DAY",
             "cost": "$7",
-            "description": "Standard next-day delivery is available for $7 in eligible delivery areas. You'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package. Please ensure someone is available to receive your order, as packages cannot be left unattended without PIN verification."
+            "description": "Standard next-day delivery is available for $7 in eligible delivery areas.\n\nSECURE DELIVERY // PIN VERIFICATION ✦\n\nYou'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package.\n\nPlease ensure someone is available to receive your order, as packages cannot be left unattended without PIN verification."
           }
         },
         "item4": {
@@ -51,7 +51,7 @@
             "title": "SAME-DAY DELIVERY",
             "mode": "DELIVERY MODE: PRIORITY",
             "cost": "SEE CHECKOUT",
-            "description": "Need your nails today? Trexity same-day delivery is available for eligible orders and delivery locations. The delivery fee will be shown at checkout. You'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package. Please ensure someone is available to receive your order."
+            "description": "Need your nails today? Trexity same-day delivery is available for eligible orders and delivery locations. The delivery fee will be shown at checkout.\n\nSECURE DELIVERY // PIN VERIFICATION ✦\n\nYou'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package.\n\nPlease ensure someone is available to receive your order."
           }
         }
       },

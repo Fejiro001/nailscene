@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-guides",
+      "settings": {
+        "guide_kind": "application",
+        "window_label": "APPLICATION FILE",
+        "eyebrow": "INSTALL FILE_001 // APPLICATION GUIDE",
+        "heading": "HOW TO APPLY",
+        "subtitle": "PRESS-ON NAILS // INSTALL YOUR SET",
+        "introduction": "A little preparation goes a long way. Follow these steps for applying your NailScene press-on nails with glue or adhesive tabs.",
+        "image_alt": "NailScene application infographic illustrating nail preparation, glue or adhesive tab placement, pressing the nail into place, and finishing with cuticle oil.",
+        "visual_heading": "APPLICATION // GRAPHIC GUIDE",
+        "note_heading": "PRO TIP // GET THE BEST FIT",
+        "note_body": "Start with clean, dry nails. Follow the instructions on your chosen adhesive and avoid getting nail glue on your skin. Let your press-ons set before getting them wet.",
+        "footer_status": "APPLICATION FILE COMPLETE ✦"
+      },
+      "blocks": {
+        "item1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "PREP & CLEANSE",
+            "description": "Gently push back your cuticles using the cuticle stick."
+          }
+        },
+        "item2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "FILE & BUFF",
+            "description": "Lightly file and buff the surface of your natural nails using the nail file and buffer block."
+          }
+        },
+        "item3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "CLEAN WITH ALCOHOL",
+            "description": "Wipe your natural nails with an alcohol pad and allow them to dry."
+          }
+        },
+        "item4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "APPLY THE ADHESIVE",
+            "description": "Apply nail glue to the middle of your natural nail and press-on nail. If using an adhesive tab, apply it to your natural nail."
+          }
+        },
+        "item5": {
+          "type": "step",
+          "settings": {
+            "number": "05",
+            "title": "PRESS INTO PLACE",
+            "description": "Position the press-on at roughly a 45-degree angle, then press and hold for 10–15 seconds. With adhesive tabs, press the nail gently toward your cuticle."
+          }
+        },
+        "item6": {
+          "type": "step",
+          "settings": {
+            "number": "06",
+            "title": "FINISH YOUR SCENE",
+            "description": "Apply cuticle oil as a finishing touch. Your NailScene set is ready!"
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

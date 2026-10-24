@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-guides",
+      "settings": {
+        "guide_kind": "removal",
+        "window_label": "REMOVAL FILE",
+        "eyebrow": "SAFE EXIT // REMOVAL GUIDE",
+        "heading": "HOW TO REMOVE",
+        "subtitle": "PRESS-ON NAILS // PRESERVE YOUR SET",
+        "introduction": "Remove your press-ons gently to help protect your natural nails and keep the set for another scene. Never force off a nail that is still firmly attached.",
+        "image_alt": "NailScene removal infographic illustrating loosening a press-on nail, soaking briefly if needed, using nail-glue remover, cleaning adhesive residue, and storing the nails.",
+        "visual_heading": "REMOVAL // GRAPHIC GUIDE",
+        "note_heading": "REMOVAL CHECK // GO GENTLY",
+        "note_body": "Never pry off a nail that resists. Follow the directions and precautions on your nail-glue remover. If you feel pain or irritation, stop rather than forcing removal.",
+        "footer_status": "REMOVAL FILE COMPLETE ✦"
+      },
+      "blocks": {
+        "item1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "LIFT THE EDGE",
+            "description": "Use a cuticle stick to gently loosen the side of the press-on nail."
+          }
+        },
+        "item2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "SOAK IF NEEDED",
+            "description": "If the nail remains firmly attached, soak it in water for 1–2 minutes before trying to gently lift the edge again."
+          }
+        },
+        "item3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "APPLY REMOVER",
+            "description": "Apply nail-glue remover to the loosened sides. The supplied graphic says to wait 5 seconds; follow your remover product’s directions."
+          }
+        },
+        "item4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "REMOVE GENTLY",
+            "description": "Carefully ease the press-on away with a cuticle stick once the adhesive has loosened. Do not force it."
+          }
+        },
+        "item5": {
+          "type": "step",
+          "settings": {
+            "number": "05",
+            "title": "CLEAN & BUFF",
+            "description": "Use an alcohol pad to wipe adhesive residue from your nail and press-on. Lightly buff away remaining residue with the nail file as needed."
+          }
+        },
+        "item6": {
+          "type": "step",
+          "settings": {
+            "number": "06",
+            "title": "OIL & STORE",
+            "description": "Apply cuticle oil to your natural nails and store your press-ons back in their case for another scene."
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

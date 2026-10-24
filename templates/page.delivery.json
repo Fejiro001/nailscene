@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-guides",
+      "settings": {
+        "guide_kind": "delivery",
+        "window_label": "DELIVERY FILE",
+        "eyebrow": "DELIVERY.EXE // SHIPPING FILE",
+        "heading": "DELIVERY & PICKUP",
+        "subtitle": "YOUR SET IS GETTING READY TO ENTER YOUR SCENE",
+        "introduction": "Every order goes through our preparation process before it is ready for pickup or delivery. Choose the delivery method that works best for you at checkout.",
+        "note_heading": "BEFORE YOU CHECK OUT ✦",
+        "note_body": "Please review your selected delivery method, any applicable delivery fee, and the pickup or delivery instructions before completing your order. Same-day and next-day delivery are available only where eligible.",
+        "footer_status": "DELIVERY FILE COMPLETE ✦"
+      },
+      "blocks": {
+        "item1": {
+          "type": "delivery_option",
+          "settings": {
+            "number": "01",
+            "title": "PROCESSING TIME",
+            "mode": "STATUS: PREPARING FILE...",
+            "cost": "UNDER 24 HOURS",
+            "description": "Orders are processed in less than 24 hours."
+          }
+        },
+        "item2": {
+          "type": "delivery_option",
+          "settings": {
+            "number": "02",
+            "title": "PICKUP",
+            "mode": "DELIVERY MODE: PICKUP",
+            "cost": "FREE",
+            "description": "Prefer to collect your order? Choose pickup at checkout and follow the instructions provided to arrange collection."
+          }
+        },
+        "item3": {
+          "type": "delivery_option",
+          "settings": {
+            "number": "03",
+            "title": "NEXT-DAY DELIVERY",
+            "mode": "DELIVERY MODE: EXPRESS",
+            "cost": "$7",
+            "description": "Next-day delivery is available for $7 when your order and delivery location are eligible. Select this option at checkout when available."
+          }
+        },
+        "item4": {
+          "type": "delivery_option",
+          "settings": {
+            "number": "04",
+            "title": "SAME-DAY DELIVERY",
+            "mode": "DELIVERY MODE: PRIORITY",
+            "cost": "SEE CHECKOUT",
+            "description": "Need your set today? Check checkout for same-day delivery availability and the applicable fee."
+          }
+        }
+      },
+      "block_order": [
+        "item1",
+        "item2",
+        "item3",
+        "item4"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

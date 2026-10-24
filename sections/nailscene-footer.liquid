@@ -1,25 +1,19 @@
-
 {{ 'nailscene-footer.css' | asset_url | stylesheet_tag }}
 
 <footer class="nailscene-footer">
   <div class="nailscene-footer__container">
-
     <div class="nailscene-footer__topline">
       <span>✦ NAILSCENE.EXE / SYSTEM FOOTER</span>
       <span>STATUS: ONLINE ●</span>
     </div>
 
     <div class="nailscene-footer__main">
-
       <div class="nailscene-footer__brand">
         {% if settings.logo != blank %}
           {{
             settings.logo
             | image_url: width: 400
-            | image_tag:
-              class: 'nailscene-footer__logo',
-              loading: 'lazy',
-              alt: shop.name
+            | image_tag: class: 'nailscene-footer__logo', loading: 'lazy', alt: shop.name
           }}
         {% else %}
           <h2>NAILSCENE</h2>
@@ -48,6 +42,28 @@
         {% endif %}
       </nav>
 
+      <nav
+        class="nailscene-footer__nav nailscene-footer__help"
+        aria-label="NailScene guides"
+      >
+        <h3>HELP_DESK</h3>
+
+        <ul>
+          <li>
+            <a href="/pages/sizing-guide">SIZING GUIDE</a>
+          </li>
+          <li>
+            <a href="/pages/application-guide">APPLICATION GUIDE</a>
+          </li>
+          <li>
+            <a href="/pages/removal-guide">REMOVAL GUIDE</a>
+          </li>
+          <li>
+            <a href="/pages/delivery">DELIVERY &amp; PICKUP</a>
+          </li>
+        </ul>
+      </nav>
+
       <div class="nailscene-footer__social">
         <h3>STAY_CONNECTED</h3>
 
@@ -73,18 +89,40 @@
 
         <p>MADE FOR YOUR MAIN CHARACTER MOMENTS ✦</p>
       </div>
-
     </div>
 
+    <nav class="nailscene-footer__legal" aria-label="Legal and store policies">
+      <h3>LEGAL_FILES</h3>
+      <ul>
+        {% for policy in shop.policies %}
+          {% assign policy_label = '' %}
+
+          {% if policy.url contains '/policies/refund-policy' %}
+            {% assign policy_label = 'RETURNS & REFUNDS' %}
+          {% elsif policy.url contains '/policies/shipping-policy' %}
+            {% assign policy_label = 'SHIPPING POLICY' %}
+          {% elsif policy.url contains '/policies/privacy-policy' %}
+            {% assign policy_label = 'PRIVACY POLICY' %}
+          {% elsif policy.url contains '/policies/terms-of-service' %}
+            {% assign policy_label = 'TERMS OF SERVICE' %}
+          {% elsif policy.url contains '/policies/contact-information' %}
+            {% assign policy_label = 'CONTACT INFORMATION' %}
+          {% endif %}
+
+          {% if policy_label != blank %}
+            <li>
+              <a href="{{ policy.url }}">{{ policy_label }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+
     <div class="nailscene-footer__bottom">
-      <span>
-        © {{ 'now' | date: '%Y' }} NAILSCENE.
-        ALL RIGHTS RESERVED.
-      </span>
+      <span> © {{ 'now' | date: '%Y' }} NAILSCENE. ALL RIGHTS RESERVED. </span>
 
       <span>NAILSCENE.EXE // END OF FILE ✦</span>
     </div>
-
   </div>
 </footer>
 

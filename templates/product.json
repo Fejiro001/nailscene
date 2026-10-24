@@ -47,7 +47,7 @@
           "settings": {
             "heading": "WHAT'S INCLUDED",
             "icon": "none",
-            "content": "<p>Items included with each press-on nail set</p>",
+            "content": "<p>✦ Nail file</p><p>✦ Buffer block</p><p>✦ Cuticle pusher</p><p>✦ Nail brush</p><p>✦ Alcohol pad</p><p>✦ Cuticle oil</p><p>✦ Nail Glue</p><p>✦ Adhesive tabs x2</p>",
             "page": ""
           }
         },
@@ -65,7 +65,7 @@
           "settings": {
             "heading": "APPLICATION",
             "icon": "none",
-            "content": "<p>Instructions for applying the nails</p>",
+            "content": "",
             "page": ""
           }
         },
@@ -117,18 +117,6 @@
         "padding_bottom": 24
       }
     },
-    "disclosures": {
-      "type": "disclosures",
-      "disabled": true,
-      "settings": {
-        "heading": "Disclosures",
-        "heading_size": "h2",
-        "open_by_default": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -150,7 +138,6 @@
   },
   "order": [
     "main",
-    "disclosures",
     "related-products"
   ]
 }

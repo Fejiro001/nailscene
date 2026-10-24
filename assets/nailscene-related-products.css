@@ -71,14 +71,6 @@ product-recommendations.related-products {
 }
 
 /* Product cards */
-.related-products .card-wrapper {
-  height: 100%;
-  padding: 12px;
-  border: 1px solid #b99bdd;
-  background: #faf6fd;
-  box-shadow: 4px 4px 0 #c0a8eb;
-}
-
 .related-products .card {
   height: 100%;
   background: transparent;
@@ -129,6 +121,98 @@ product-recommendations.related-products {
     monospace;
 }
 
+/* =====================================
+   NAILSCENE — RECOMMENDATION CARDS
+   ===================================== */
+
+/* Outer card frame */
+.related-products .nailscene-related__item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #b99bdd;
+  background: #faf6fd;
+  box-shadow: 4px 4px 0 #c0a8eb;
+}
+
+/* Remove duplicated frame from Dawn */
+.related-products .nailscene-related__item .card-wrapper {
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* FILE_001, FILE_002, etc. */
+.nailscene-related__file-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #6b55ba;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Status and button area */
+.nailscene-related__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* Reuse the global coloured status badge */
+.nailscene-related__actions .nailscene-status-badge {
+  margin: 0;
+}
+
+/* Functional VIEW FILE button */
+.nailscene-related__button {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #8966c6;
+  border-radius: 0;
+  background: linear-gradient(
+    180deg,
+    #f5e8ff 0%,
+    #ddbbee 55%,
+    #c0a8eb 100%
+  );
+  box-shadow: 3px 3px 0 #55437d;
+  color: #55437d;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.nailscene-related__button:hover {
+  transform: translateY(-2px);
+  color: #55437d;
+  text-decoration: none;
+}
+
+.nailscene-related__button:focus-visible {
+  outline: 2px solid #55437d;
+  outline-offset: 5px;
+}
+
+/* Avoid a second Sold out badge on recommendation images */
+.nailscene-related__item .card__badge {
+  display: none;
+}
+
 /* Mobile */
 @media screen and (max-width: 749px) {
   product-recommendations.related-products {
@@ -152,5 +236,14 @@ product-recommendations.related-products {
 
   .related-products .related-products__heading {
     font-size: 26px;
+  }
+
+    .related-products .nailscene-related__item {
+    padding: 12px;
+  }
+
+  .nailscene-related__button {
+    padding: 14px;
+    font-size: 10px;
   }
 }

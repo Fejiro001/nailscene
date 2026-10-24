@@ -45,7 +45,16 @@
         >
           {% assign skip_card_product_styles = false %}
           {% for recommendation in recommendations.products %}
-            <li class="grid__item">
+            {% assign file_label = recommendation.metafields.custom.file_label.value | default: 'SCENE FILE' %}
+
+            <li class="grid__item nailscene-related__item">
+              <!-- Permanent file identifier -->
+              <div class="nailscene-related__file-label">
+                <span aria-hidden="true">✦</span>
+                {{ file_label | escape }}
+              </div>
+
+              <!-- Existing Shopify product card -->
               {% render 'card-product',
                 card_product: recommendation,
                 media_aspect_ratio: section.settings.image_ratio,
@@ -56,8 +65,25 @@
                 skip_styles: skip_card_product_styles,
                 product_view_context: 'recommendation'
               %}
+
+              <!-- NailScene status and action -->
+              <div class="nailscene-related__actions">
+                {% render 'nailscene-product-status',
+                  product: recommendation,
+                  class_name: 'nailscene-related__status'
+                %}
+
+                <a
+                  href="{{ recommendation.url }}"
+                  class="nailscene-related__button"
+                  aria-label="View {{ recommendation.title | escape }}"
+                >
+                  VIEW FILE <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </li>
-            {%- assign skip_card_product_styles = true -%}
+
+            {% assign skip_card_product_styles = true %}
           {% endfor %}
         </ul>
       </div>

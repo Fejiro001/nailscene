@@ -1,8 +1,19 @@
 /* =====================================
    NAILSCENE — RELATED PRODUCTS
    ===================================== */
-
+/* Keep the empty element invisible while recommendations load */
 product-recommendations.related-products {
+  display: block;
+  min-height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Show the NailScene window only when recommendations exist */
+product-recommendations.related-products:has(.nailscene-related__body) {
   max-width: 1180px;
   margin: 48px auto 80px;
   padding: 0 !important;
@@ -152,7 +163,7 @@ product-recommendations.related-products {
   gap: 8px;
   margin-bottom: 12px;
   color: #6b55ba;
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -180,15 +191,10 @@ product-recommendations.related-products {
   padding: 13px 16px;
   border: 1px solid #8966c6;
   border-radius: 0;
-  background: linear-gradient(
-    180deg,
-    #f5e8ff 0%,
-    #ddbbee 55%,
-    #c0a8eb 100%
-  );
+  background: linear-gradient(180deg, #f5e8ff 0%, #ddbbee 55%, #c0a8eb 100%);
   box-shadow: 3px 3px 0 #55437d;
   color: #55437d;
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -215,7 +221,7 @@ product-recommendations.related-products {
 
 /* Mobile */
 @media screen and (max-width: 749px) {
-  product-recommendations.related-products {
+  product-recommendations.related-products:has(.nailscene-related__body) {
     width: calc(100% - 24px);
     margin: 32px auto 64px;
   }
@@ -238,7 +244,7 @@ product-recommendations.related-products {
     font-size: 26px;
   }
 
-    .related-products .nailscene-related__item {
+  .related-products .nailscene-related__item {
     padding: 12px;
   }
 

@@ -88,10 +88,6 @@
   font-size: 1.2rem;
 }
 
-.nailscene-file__status span {
-  color: #23865a;
-}
-
 .nailscene-file__image {
   display: flex;
   align-items: center;

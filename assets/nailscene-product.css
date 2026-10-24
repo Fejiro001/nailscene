@@ -67,18 +67,6 @@
   letter-spacing: 0.04em;
 }
 
-.nailscene-product__status.is-online {
-  color: #47785b;
-}
-
-.nailscene-product__status.is-brb {
-  color: #8060bc;
-}
-
-.nailscene-product__status.is-offline {
-  color: #9b4368;
-}
-
 /* PRICE AND DESCRIPTION */
 
 .nailscene-product .price,

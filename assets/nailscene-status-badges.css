@@ -1,0 +1,59 @@
+/* =========================================
+   NAILSCENE — STATUS BADGES
+   ========================================= */
+
+.nailscene-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  width: fit-content;
+  max-width: 100%;
+  margin: 8px 0 14px;
+  padding: 7px 12px;
+
+  border: 1px solid;
+  border-radius: 3px;
+
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+/* ONLINE — pastel green */
+.nailscene-status-badge.is-online {
+  color: #286847;
+  background-color: #e7f5ec;
+  border-color: #a8d4b5;
+}
+
+/* BRB — soft amber yellow */
+/* BRB — soft amber yellow */
+.nailscene-status-badge.is-brb,
+.nailscene-product .nailscene-status-badge.is-brb {
+  color: #7d591c;
+  background: #fff4cf;
+  border: 1px solid #dfbd64;
+}
+
+/* OFFLINE — muted rose */
+.nailscene-status-badge.is-offline {
+  color: #9e3e60;
+  background-color: #fde9ef;
+  border-color: #e6a3b5;
+}
+
+/* Decorative star */
+.nailscene-status-badge span {
+  font-size: 12px;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .nailscene-status-badge {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}

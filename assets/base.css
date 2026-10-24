@@ -3876,21 +3876,3 @@ p {
     inset -2px -2px 0 #ffffff,
     1px 1px 0 #55437d;
 }
-
-
-/* NailScene product statuses */
-
-.nailscene-file__status.is-online,
-.nailscene-collection__status.is-online {
-  color: #47785b;
-}
-
-.nailscene-file__status.is-brb,
-.nailscene-collection__status.is-brb {
-  color: #8060bc;
-}
-
-.nailscene-file__status.is-offline,
-.nailscene-collection__status.is-offline {
-  color: #9b4368;
-}

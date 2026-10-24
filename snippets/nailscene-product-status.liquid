@@ -4,11 +4,16 @@
   if product.available
     assign scene_status = 'online'
   elsif product.metafields.custom.restocking.value == true
-    assign scene_status = 'brb...'
+    assign scene_status = 'brb'
   endif
 %}
 
-<p class="{{ class_name }} is-{{ scene_status }}">
-  STATUS: {{ scene_status | upcase }}
+<p class="nailscene-status-badge {{ class_name }} is-{{ scene_status }}">
+  STATUS:
+  {% if scene_status == 'brb' %}
+    BRB...
+  {% else %}
+    {{ scene_status | upcase }}
+  {% endif %}
   <span aria-hidden="true">✦</span>
 </p>

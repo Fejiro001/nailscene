@@ -534,23 +534,6 @@ body:has(.nailscene-collection-hero) .nailscene-directory #product-grid .card-wr
   letter-spacing: 0.08em;
 }
 
-/* Dynamic product availability */
-
-.nailscene-collection__status {
-  margin: 0 0 12px;
-
-  color: #47785b;
-
-  font-family: 'Space Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-.nailscene-collection__status.is-offline {
-  color: #9b4368;
-}
-
 /* Directory bottom bar */
 
 .nailscene-directory__statusbar {

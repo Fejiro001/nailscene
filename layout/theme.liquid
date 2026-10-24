@@ -323,6 +323,7 @@
         onload="this.media='all'"
       >
     {%- endif -%}
+    {{ 'nailscene-status-badges.css' | asset_url | stylesheet_tag }}
 
     <script>
       if (Shopify.designMode) {

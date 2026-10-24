@@ -1,4 +1,3 @@
-
 /* =====================================
    NAILSCENE COLLECTION PAGE
 ===================================== */
@@ -14,11 +13,7 @@ body:has(.nailscene-collection-hero) #MainContent {
   padding: 35px 5% 22px;
 
   background:
-    radial-gradient(
-      ellipse at 85% 15%,
-      rgba(221, 187, 238, 0.65),
-      transparent 55%
-    ),
+    radial-gradient(ellipse at 85% 15%, rgba(221, 187, 238, 0.65), transparent 55%),
     linear-gradient(180deg, #fefaff, #f1e6ff);
 
   border-bottom: 1px solid #c0a8eb;
@@ -113,11 +108,7 @@ body:has(.nailscene-collection-hero) #MainContent {
 
   border: 2px solid #6953ba;
 
-  background: linear-gradient(
-    145deg,
-    #fffaff,
-    #e6d2f6
-  );
+  background: linear-gradient(145deg, #fffaff, #e6d2f6);
 
   box-shadow:
     inset 2px 2px 0 #ffffff,
@@ -153,15 +144,12 @@ body:has(.nailscene-collection-hero) #MainContent {
 
 /* Scope changes to this branded collection layout */
 
-body:has(.nailscene-collection-hero)
-collection-component > .gradient {
+body:has(.nailscene-collection-hero) collection-component > .gradient {
   background: transparent;
 }
 
-body:has(.nailscene-collection-hero)
-.collection.page-width,
-body:has(.nailscene-collection-hero)
-.facets-wrapper.page-width {
+body:has(.nailscene-collection-hero) .collection.page-width,
+body:has(.nailscene-collection-hero) .facets-wrapper.page-width {
   max-width: 1480px;
   margin-left: auto;
   margin-right: auto;
@@ -171,41 +159,32 @@ body:has(.nailscene-collection-hero)
 
 /* FILTER AND SORT BAR */
 
-body:has(.nailscene-collection-hero)
-.facets-wrapper {
+body:has(.nailscene-collection-hero) .facets-wrapper {
   padding-top: 18px;
   padding-bottom: 18px;
 
   border-bottom: 1px solid #c0a8eb;
 }
 
-body:has(.nailscene-collection-hero)
-.facets__heading,
-body:has(.nailscene-collection-hero)
-.facets__summary,
-body:has(.nailscene-collection-hero)
-.facet-filters__label,
-body:has(.nailscene-collection-hero)
-.facet-filters__sort,
-body:has(.nailscene-collection-hero)
-.product-count__text {
+body:has(.nailscene-collection-hero) .facets__heading,
+body:has(.nailscene-collection-hero) .facets__summary,
+body:has(.nailscene-collection-hero) .facet-filters__label,
+body:has(.nailscene-collection-hero) .facet-filters__sort,
+body:has(.nailscene-collection-hero) .product-count__text {
   color: #49336e;
 
   font-family: 'Space Mono', monospace;
   font-size: 11px;
 }
 
-body:has(.nailscene-collection-hero)
-.facets__summary:hover,
-body:has(.nailscene-collection-hero)
-.facet-filters__sort:hover {
+body:has(.nailscene-collection-hero) .facets__summary:hover,
+body:has(.nailscene-collection-hero) .facet-filters__sort:hover {
   color: #8060bc;
 }
 
 /* PRODUCT GRID */
 
-body:has(.nailscene-collection-hero)
-#product-grid {
+body:has(.nailscene-collection-hero) #product-grid {
   --grid-desktop-horizontal-spacing: 22px;
   --grid-desktop-vertical-spacing: 24px;
 
@@ -217,8 +196,7 @@ body:has(.nailscene-collection-hero)
    PRODUCT FILE WINDOWS
 ===================================== */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card-wrapper {
+body:has(.nailscene-collection-hero) #product-grid .card-wrapper {
   position: relative;
   overflow: hidden;
 
@@ -239,8 +217,7 @@ body:has(.nailscene-collection-hero)
 
 /* Window title bar */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card-wrapper::before {
+body:has(.nailscene-collection-hero) #product-grid .card-wrapper::before {
   content: '✦ NAILSCENE.EXE / FILE';
 
   position: absolute;
@@ -257,12 +234,7 @@ body:has(.nailscene-collection-hero)
 
   border-bottom: 1px solid #8060bc;
 
-  background: linear-gradient(
-    180deg,
-    #fffaff,
-    #eddbfa 35%,
-    #d7baf1
-  );
+  background: linear-gradient(180deg, #fffaff, #eddbfa 35%, #d7baf1);
 
   color: #49336e;
 
@@ -274,8 +246,7 @@ body:has(.nailscene-collection-hero)
   pointer-events: none;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card-wrapper::after {
+body:has(.nailscene-collection-hero) #product-grid .card-wrapper::after {
   content: '🗕 🗖 ✖';
 
   position: absolute;
@@ -292,43 +263,34 @@ body:has(.nailscene-collection-hero)
 
 /* Hover */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card-wrapper:hover {
+body:has(.nailscene-collection-hero) #product-grid .card-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 5px 9px 0 #c0a8eb;
 }
 
 /* Reset Dawn card background */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card {
+body:has(.nailscene-collection-hero) #product-grid .card {
   background: #fffaff;
   border: 0;
   border-radius: 0;
   box-shadow: none;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__inner {
+body:has(.nailscene-collection-hero) #product-grid .card__inner {
   border: 0;
   border-radius: 0;
 
-  background: linear-gradient(
-    160deg,
-    #f4ebff,
-    #fcfaff
-  );
+  background: linear-gradient(160deg, #f4ebff, #fcfaff);
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__inner::after {
+body:has(.nailscene-collection-hero) #product-grid .card__inner::after {
   display: none;
 }
 
 /* Product image frame */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__media {
+body:has(.nailscene-collection-hero) #product-grid .card__media {
   top: 14px;
   bottom: 14px;
 
@@ -341,13 +303,11 @@ body:has(.nailscene-collection-hero)
   background: #fffaff;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__media .media {
+body:has(.nailscene-collection-hero) #product-grid .card__media .media {
   background: #fffaff;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__media img {
+body:has(.nailscene-collection-hero) #product-grid .card__media img {
   width: 100%;
   height: 100%;
 
@@ -359,23 +319,19 @@ body:has(.nailscene-collection-hero)
 
 /* Product title, price and bottom area */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card > .card__content {
+body:has(.nailscene-collection-hero) #product-grid .card > .card__content {
   display: block;
   padding: 20px 20px 22px;
 
   background: #fffaff;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card > .card__content
-.card__information {
+body:has(.nailscene-collection-hero) #product-grid .card > .card__content .card__information {
   padding: 0;
   text-align: left;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__heading {
+body:has(.nailscene-collection-hero) #product-grid .card__heading {
   margin: 0 0 12px;
 
   color: #55437d;
@@ -385,16 +341,13 @@ body:has(.nailscene-collection-hero)
   line-height: 1.3;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__heading a {
+body:has(.nailscene-collection-hero) #product-grid .card__heading a {
   color: inherit;
   text-decoration: none;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .price,
-body:has(.nailscene-collection-hero)
-#product-grid .price-item {
+body:has(.nailscene-collection-hero) #product-grid .price,
+body:has(.nailscene-collection-hero) #product-grid .price-item {
   color: #49336e;
 
   font-family: 'Space Mono', monospace;
@@ -405,9 +358,7 @@ body:has(.nailscene-collection-hero)
 /* Visual view-file indicator.
    The actual link remains Dawn's product-card link. */
 
-body:has(.nailscene-collection-hero)
-#product-grid .card > .card__content
-.card__information::after {
+body:has(.nailscene-collection-hero) #product-grid .card > .card__content .card__information::after {
   content: 'VIEW FILE  →';
 
   display: block;
@@ -418,12 +369,7 @@ body:has(.nailscene-collection-hero)
 
   border: 1px solid #6953ba;
 
-  background: linear-gradient(
-    180deg,
-    #fffaff,
-    #e8d0fa 45%,
-    #c7a5ed
-  );
+  background: linear-gradient(180deg, #fffaff, #e8d0fa 45%, #c7a5ed);
 
   box-shadow:
     inset 1px 1px 0 #ffffff,
@@ -459,61 +405,15 @@ body:has(.nailscene-collection-hero)
   }
 }
 
-@media (max-width: 749px) {
-  .nailscene-collection-hero {
-    padding: 32px 20px 24px;
-  }
-
-  .nailscene-collection-hero__system,
-  .nailscene-collection-hero__bottom {
-    font-size: 8px;
-  }
-
-  .nailscene-collection-hero__main {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 25px;
-
-    padding: 35px 0;
-  }
-
-  .nailscene-collection-hero h1 {
-    font-size: 48px;
-  }
-
-  .nailscene-collection-hero__description {
-    font-size: 12px;
-  }
-
-  .nailscene-collection-hero__counter {
-    align-self: flex-start;
-    min-width: 145px;
-  }
-
-  body:has(.nailscene-collection-hero)
-  #product-grid {
-    --grid-mobile-horizontal-spacing: 16px;
-    --grid-mobile-vertical-spacing: 24px;
-  }
-
-  body:has(.nailscene-collection-hero)
-  #product-grid .card__heading {
-    font-size: 21px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  body:has(.nailscene-collection-hero)
-  #product-grid .card-wrapper {
+  body:has(.nailscene-collection-hero) #product-grid .card-wrapper {
     transition: none;
   }
 
-  body:has(.nailscene-collection-hero)
-  #product-grid .card-wrapper:hover {
+  body:has(.nailscene-collection-hero) #product-grid .card-wrapper:hover {
     transform: none;
   }
 }
-
 
 /* =====================================
    NAILSCENE DIRECTORY WINDOW
@@ -546,12 +446,7 @@ body:has(.nailscene-collection-hero)
 
   border: 1px solid #9572d3;
 
-  background: linear-gradient(
-    180deg,
-    #fffaff,
-    #ead7fa 35%,
-    #c7a7ed
-  );
+  background: linear-gradient(180deg, #fffaff, #ead7fa 35%, #c7a7ed);
 
   color: #49336e;
 
@@ -568,11 +463,7 @@ body:has(.nailscene-collection-hero)
 
   border-bottom: 1px solid #c0a8eb;
 
-  background: linear-gradient(
-    180deg,
-    #fcf8ff,
-    #f3e9ff
-  );
+  background: linear-gradient(180deg, #fcf8ff, #f3e9ff);
 
   text-align: center;
 }
@@ -616,10 +507,8 @@ body:has(.nailscene-collection-hero)
   background: #faf6ff;
 }
 
-body:has(.nailscene-collection-hero)
-.nailscene-directory .facets-wrapper.page-width,
-body:has(.nailscene-collection-hero)
-.nailscene-directory .collection.page-width {
+body:has(.nailscene-collection-hero) .nailscene-directory .facets-wrapper.page-width,
+body:has(.nailscene-collection-hero) .nailscene-directory .collection.page-width {
   max-width: none;
   padding-left: 0;
   padding-right: 0;
@@ -627,9 +516,7 @@ body:has(.nailscene-collection-hero)
 
 /* Dynamic file number in product window title bar */
 
-body:has(.nailscene-collection-hero)
-.nailscene-directory #product-grid
-.card-wrapper[data-nailscene-file]::before {
+body:has(.nailscene-collection-hero) .nailscene-directory #product-grid .card-wrapper[data-nailscene-file]::before {
   content: '✦ ' attr(data-nailscene-file);
 }
 
@@ -686,8 +573,65 @@ body:has(.nailscene-collection-hero)
 }
 
 /* Mobile */
-
 @media (max-width: 749px) {
+  /* Display one product per row */
+  #product-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  /* Override Dawn's two-column widths */
+  #product-grid > .grid__item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    /* Ensure the card fills its grid column */
+    #product-grid .card-wrapper {
+      width: 100%;
+    }
+  }
+
+  .nailscene-collection-hero {
+    padding: 32px 20px 24px;
+  }
+
+  .nailscene-collection-hero__system,
+  .nailscene-collection-hero__bottom {
+    font-size: 8px;
+  }
+
+  .nailscene-collection-hero__main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+
+    padding: 35px 0;
+  }
+
+  .nailscene-collection-hero h1 {
+    font-size: 48px;
+  }
+
+  .nailscene-collection-hero__description {
+    font-size: 12px;
+  }
+
+  .nailscene-collection-hero__counter {
+    align-self: flex-start;
+    min-width: 145px;
+  }
+
+  body:has(.nailscene-collection-hero) #product-grid {
+    --grid-mobile-horizontal-spacing: 16px;
+    --grid-mobile-vertical-spacing: 24px;
+  }
+
+  body:has(.nailscene-collection-hero) #product-grid .card__heading {
+    font-size: 21px;
+  }
+
   .nailscene-directory {
     width: calc(100% - 24px);
     margin: 12px auto 25px;
@@ -711,67 +655,56 @@ body:has(.nailscene-collection-hero)
   }
 }
 
-
 /* =====================================
    COMPACT SCENE FILE PRODUCT CARDS
 ===================================== */
 
 /* Reduce image height to a 4:3 ratio */
-body:has(.nailscene-collection-hero)
-#product-grid .card__inner {
+body:has(.nailscene-collection-hero) #product-grid .card__inner {
   --ratio-percent: 75% !important;
 }
 
 /* Reduce spacing around the product image */
-body:has(.nailscene-collection-hero)
-#product-grid .card__media {
+body:has(.nailscene-collection-hero) #product-grid .card__media {
   top: 10px;
   bottom: 10px;
   width: calc(100% - 20px);
   margin: 0 10px;
 }
 
-body:has(.nailscene-collection-hero)
-#product-grid .card__media img {
+body:has(.nailscene-collection-hero) #product-grid .card__media img {
   padding: 8px;
   object-fit: contain;
 }
 
 /* Compact product information */
-body:has(.nailscene-collection-hero)
-#product-grid .card > .card__content {
+body:has(.nailscene-collection-hero) #product-grid .card > .card__content {
   padding: 14px 16px 17px;
 }
 
 /* Product name */
-body:has(.nailscene-collection-hero)
-#product-grid .card__heading {
+body:has(.nailscene-collection-hero) #product-grid .card__heading {
   margin-bottom: 7px;
   font-size: 21px;
 }
 
 /* File label */
-body:has(.nailscene-collection-hero)
-#product-grid .nailscene-collection__file-label {
+body:has(.nailscene-collection-hero) #product-grid .nailscene-collection__file-label {
   margin-bottom: 5px;
 }
 
 /* Stock status */
-body:has(.nailscene-collection-hero)
-#product-grid .nailscene-collection__status {
+body:has(.nailscene-collection-hero) #product-grid .nailscene-collection__status {
   margin-bottom: 8px;
 }
 
 /* Price */
-body:has(.nailscene-collection-hero)
-#product-grid .price {
+body:has(.nailscene-collection-hero) #product-grid .price {
   margin-top: 6px;
 }
 
 /* VIEW FILE visual button */
-body:has(.nailscene-collection-hero)
-#product-grid .card > .card__content
-.card__information::after {
+body:has(.nailscene-collection-hero) #product-grid .card > .card__content .card__information::after {
   margin-top: 12px;
   padding: 8px 14px;
 }

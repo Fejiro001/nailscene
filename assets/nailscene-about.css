@@ -131,7 +131,7 @@
 }
 
 .nailscene-about__prose {
-  max-width: 760px;
+  max-width: 70ch;
   color: #55437d;
   font-size: 14px;
   line-height: 1.9;

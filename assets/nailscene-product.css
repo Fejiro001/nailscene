@@ -307,6 +307,51 @@
   line-height: 1.8;
 }
 
+/* NailScene accordion guide links */
+
+.nailscene-product .product__accordion .accordion__content a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 10px 16px;
+
+  border: 1px solid #8966c6;
+  border-radius: 0;
+
+  background: linear-gradient(
+    180deg,
+    #f5e8ff 0%,
+    #ddbbee 55%,
+    #c0a8eb 100%
+  );
+
+  box-shadow: 3px 3px 0 #55437d;
+
+  color: #55437d;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.nailscene-product .product__accordion .accordion__content a:hover {
+  transform: translateY(-2px);
+  color: #55437d;
+  text-decoration: none;
+}
+
+.nailscene-product .product__accordion .accordion__content a:focus-visible {
+  outline: 2px solid #55437d;
+  outline-offset: 5px;
+}
+
 /* =====================================
    BRB AND OFFLINE STATES
 ===================================== */

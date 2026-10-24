@@ -38,10 +38,10 @@
           "type": "delivery_option",
           "settings": {
             "number": "03",
-            "title": "NEXT-DAY DELIVERY",
-            "mode": "DELIVERY MODE: EXPRESS",
+            "title": "STANDARD DELIVERY",
+            "mode": "DELIVERY MODE: NEXT DAY",
             "cost": "$7",
-            "description": "Next-day delivery is available for $7 when your order and delivery location are eligible. Select this option at checkout when available."
+            "description": "Get your NailScene order delivered the next day for $7 in eligible delivery areas. For deliveries requiring PIN verification, you'll receive a 4-digit code to provide to your Trexity courier in person before collecting your package. Please ensure someone is available to receive your order."
           }
         },
         "item4": {

@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "nailscene-sizing-guide",
+      "settings": {
+        "heading": "NAIL SIZING GUIDE",
+        "tagline": "FILE YOUR FIT // FIND YOUR SIZE",
+        "introduction": "Every scene deserves the right fit. Follow these steps to find the press-on nail size that works best for you.",
+        "sizing_notice": "Our size chart is a guide. Nail beds vary, so we recommend checking your measurements carefully and ordering a sizing kit if one is available."
+      },
+      "blocks": {
+        "step1": { "type": "step", "settings": { "title": "01 // PREP", "description": "Remove any nail polish and make sure your natural nails are clean and dry." } },
+        "step2": { "type": "step", "settings": { "title": "02 // MEASURE", "description": "Use flexible measuring tape or a narrow strip of transparent tape. Measure across the widest part of each natural nail, from sidewall to sidewall." } },
+        "step3": { "type": "step", "settings": { "title": "03 // MARK & MEASURE", "description": "Place transparent tape across your nail and mark both edges. Remove and flatten the tape, then measure between the marks in millimetres (mm)." } },
+        "step4": { "type": "step", "settings": { "title": "04 // MATCH YOUR FILE", "description": "Compare each measurement with our NailScene size chart. Measure all ten nails individually, as your left and right hands may differ." } },
+        "step5": { "type": "step", "settings": { "title": "05 // CHECK YOUR FIT", "description": "If your measurement falls between two sizes, choose the larger size and gently file the sides of the press-on if needed." } }
+      },
+      "block_order": ["step1", "step2", "step3", "step4", "step5"]
+    }
+  },
+  "order": ["main"]
+}

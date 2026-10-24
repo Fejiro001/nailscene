@@ -1,0 +1,113 @@
+{{ 'nailscene-sizing-guide.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign scene_files_url = collections['scene-files'].url | default: '/collections/scene-files'
+%}
+
+<section class="nailscene-sizing" aria-labelledby="nailscene-sizing-title-{{ section.id }}">
+  <div class="nailscene-sizing__window">
+    <div class="nailscene-sizing__titlebar">
+      <span>✦ NAILSCENE.EXE / SIZING FILE</span>
+      <span aria-hidden="true">─ □ ×</span>
+    </div>
+
+    <div class="nailscene-sizing__body">
+      <header class="nailscene-sizing__intro">
+        <p class="nailscene-sizing__eyebrow">SIZING FILE // FIND YOUR FIT</p>
+        <h1 id="nailscene-sizing-title-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+        <p class="nailscene-sizing__tagline">{{ section.settings.tagline | escape }}</p>
+        <p class="nailscene-sizing__description">{{ section.settings.introduction | escape }}</p>
+      </header>
+
+      <div class="nailscene-sizing__grid">
+        <div class="nailscene-sizing__panel">
+          <h2 class="nailscene-sizing__panel-title">HOW TO MEASURE</h2>
+          <ol class="nailscene-sizing__steps">
+            {% for block in section.blocks %}
+              {% if block.type == 'step' %}
+                <li class="nailscene-sizing__step" {{ block.shopify_attributes }}>
+                  <span class="nailscene-sizing__step-number" aria-hidden="true">{{ forloop.index }}</span>
+                  <div>
+                    <h3>{{ block.settings.title | escape }}</h3>
+                    <p>{{ block.settings.description | escape }}</p>
+                  </div>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </div>
+
+        <div class="nailscene-sizing__panel">
+          <h2 class="nailscene-sizing__panel-title">SIZE CHART</h2>
+          <div class="nailscene-sizing__chart-content">
+            <div class="nailscene-sizing__table-scroll" role="region" aria-label="Nail size chart in millimetres" tabindex="0">
+              <table class="nailscene-sizing__table">
+                <caption>Natural nail widths in millimetres (mm)</caption>
+                <thead>
+                  <tr><th scope="col">FINGER</th><th scope="col">XS</th><th scope="col">S</th><th scope="col">M</th><th scope="col">L</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Thumb</th><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                  <tr><th scope="row">Index</th><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                  <tr><th scope="row">Middle</th><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                  <tr><th scope="row">Ring</th><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                  <tr><th scope="row">Pinky</th><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="nailscene-sizing__units">MEASUREMENTS ARE NAIL WIDTHS IN MM</p>
+            <div class="nailscene-sizing__fitcheck">
+              <strong>FIT CHECK ✦</strong>
+              <p>Measure your natural nail, not the press-on. If you're between sizes, choose the larger size and gently file the sides if needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="nailscene-sizing__tip" aria-label="Sizing advice">
+        <h2>IMPORTANT // BEFORE YOU ORDER</h2>
+        <p>{{ section.settings.sizing_notice | escape }}</p>
+        <ul>
+          <li>Measure all ten nails individually for the most accurate result.</li>
+          <li>When measuring with transparent tape, flatten it before using a ruler.</li>
+          <li>Left- and right-hand nail widths may differ.</li>
+        </ul>
+      </aside>
+
+      <div class="nailscene-sizing__finish">
+        <p>STATUS: FIT CHECK COMPLETE ✦</p>
+        <h2>YOUR SCENE. YOUR SET.</h2>
+        <a class="nailscene-sizing__button" href="{{ scene_files_url }}">BACK TO SCENE FILES →</a>
+      </div>
+    </div>
+    <div class="nailscene-sizing__statusbar">
+      <span>NAILSCENE.EXE / SIZING FILE COMPLETE</span>
+      <span>FIT CHECK COMPLETE ✦</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene Sizing Guide",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Page heading", "default": "NAIL SIZING GUIDE" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "FILE YOUR FIT // FIND YOUR SIZE" },
+    { "type": "textarea", "id": "introduction", "label": "Introduction", "default": "Every scene deserves the right fit. Follow these steps to find the press-on nail size that works best for you." },
+    { "type": "textarea", "id": "sizing_notice", "label": "Before you order", "default": "Our size chart is a guide. Nail beds vary, so we recommend checking your measurements carefully." },
+    { "type": "image_picker", "id": "guide_image", "label": "Optional replacement guide image", "info": "If blank, the uploaded NailScene sizing guide theme asset is used." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Measurement step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Instructions" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [{ "name": "NailScene Sizing Guide" }]
+}
+{% endschema %}

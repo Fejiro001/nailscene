@@ -23,74 +23,83 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <product-recommendations
-    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    class="related-products"
     data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
     data-section-id="{{ section.id }}"
     data-product-id="{{ product.id }}"
+    style="display: block; min-height: 1px;"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      <div class="nailscene-related__titlebar">
-        <span>✦ NAILSCENE.EXE / RECOMMENDED FILES</span>
-        <span aria-hidden="true">─ □ ×</span>
-      </div>
+      <div class="color-{{ section.settings.color_scheme }} gradient">
+        <div class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          <div class="nailscene-related__titlebar">
+            <span>✦ NAILSCENE.EXE / RECOMMENDED FILES</span>
+            <span aria-hidden="true">🗕 🗖 ✖</span>
+          </div>
 
-      <div class="nailscene-related__body">
-        <p class="nailscene-related__eyebrow">YOUR NEXT SCENE IS ONE CLICK AWAY ✦</p>
-        <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.heading }}
-        </h2>
-        <ul
-          class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-          role="list"
-        >
-          {% assign skip_card_product_styles = false %}
-          {% for recommendation in recommendations.products %}
-            {% assign file_label = recommendation.metafields.custom.file_label.value | default: 'SCENE FILE' %}
+          <div class="nailscene-related__body">
+            <p class="nailscene-related__eyebrow">YOUR NEXT SCENE IS ONE CLICK AWAY ✦</p>
 
-            <li class="grid__item nailscene-related__item">
-              <!-- Permanent file identifier -->
-              <div class="nailscene-related__file-label">
-                <span aria-hidden="true">✦</span>
-                {{ file_label | escape }}
-              </div>
+            <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+              {{ section.settings.heading }}
+            </h2>
 
-              <!-- Existing Shopify product card -->
-              {% render 'card-product',
-                card_product: recommendation,
-                media_aspect_ratio: section.settings.image_ratio,
-                image_shape: section.settings.image_shape,
-                show_secondary_image: section.settings.show_secondary_image,
-                show_vendor: section.settings.show_vendor,
-                show_rating: section.settings.show_rating,
-                skip_styles: skip_card_product_styles,
-                product_view_context: 'recommendation'
-              %}
+            <ul
+              class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+              role="list"
+            >
+              {% assign skip_card_product_styles = false %}
 
-              <!-- NailScene status and action -->
-              <div class="nailscene-related__actions">
-                {% render 'nailscene-product-status',
-                  product: recommendation,
-                  class_name: 'nailscene-related__status'
-                %}
+              {% for recommendation in recommendations.products %}
+                {% assign file_label = recommendation.metafields.custom.file_label.value | default: 'SCENE FILE' %}
 
-                <a
-                  href="{{ recommendation.url }}"
-                  class="nailscene-related__button"
-                  aria-label="View {{ recommendation.title | escape }}"
-                >
-                  VIEW FILE <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </li>
+                <li class="grid__item nailscene-related__item">
+                  <div class="nailscene-related__file-label">
+                    <span aria-hidden="true">✦</span>
+                    {{ file_label | escape }}
+                  </div>
 
-            {% assign skip_card_product_styles = true %}
-          {% endfor %}
-        </ul>
-      </div>
+                  {% render 'card-product',
+                    card_product: recommendation,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    image_shape: section.settings.image_shape,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    skip_styles: skip_card_product_styles,
+                    product_view_context: 'recommendation'
+                  %}
 
-      <div class="nailscene-related__statusbar">
-        <span>NAILSCENE.EXE / DISCOVER MORE</span>
-        <span>FILES READY ✦</span>
+                  <div class="nailscene-related__actions">
+                    {% render 'nailscene-product-status',
+                      product: recommendation,
+                      class_name: 'nailscene-related__status'
+                    %}
+
+                    <a
+                      href="{{ recommendation.url }}"
+                      class="nailscene-related__button"
+                      aria-label="View {{ recommendation.title | escape }}"
+                    >
+                      VIEW FILE <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </li>
+
+                {% assign skip_card_product_styles = true %}
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="nailscene-related__statusbar">
+            <span>NAILSCENE.EXE / DISCOVER MORE</span>
+            <span>FILES READY ✦</span>
+          </div>
+        </div>
+
+        {% if section.settings.image_shape == 'arch' %}
+          {{ 'mask-arch.svg' | inline_asset_content }}
+        {% endif %}
       </div>
     {% endif %}
   </product-recommendations>

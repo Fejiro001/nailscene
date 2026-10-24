@@ -1,0 +1,156 @@
+/* =====================================
+   NAILSCENE — RELATED PRODUCTS
+   ===================================== */
+
+product-recommendations.related-products {
+  max-width: 1180px;
+  margin: 48px auto 80px;
+  padding: 0 !important;
+  border: 1px solid #9976d0;
+  background: #fefaff;
+  box-shadow: 6px 6px 0 #c0a8eb;
+  color: #55437d;
+}
+
+/* Retro window title bar */
+.nailscene-related__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(180deg, #fefaff, #ddbbee 55%, #c0a8eb);
+  border-bottom: 1px solid #9976d0;
+  font:
+    700 11px 'Space Mono',
+    monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Main content */
+.nailscene-related__body {
+  padding: 40px 32px 48px;
+}
+
+.nailscene-related__eyebrow {
+  margin: 0 0 12px;
+  color: #8067b1;
+  font:
+    700 10px 'Space Mono',
+    monospace;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.related-products .related-products__heading {
+  margin: 0 0 32px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Center cards even when only one is recommended */
+.related-products .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 300px));
+  justify-content: center;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.related-products .product-grid > .grid__item {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Product cards */
+.related-products .card-wrapper {
+  height: 100%;
+  padding: 12px;
+  border: 1px solid #b99bdd;
+  background: #faf6fd;
+  box-shadow: 4px 4px 0 #c0a8eb;
+}
+
+.related-products .card {
+  height: 100%;
+  background: transparent;
+}
+
+.related-products .card__inner {
+  border: 1px solid #e5d9f3;
+  background: #ffffff;
+}
+
+.related-products .card__media img {
+  object-fit: contain;
+}
+
+.related-products .card__information {
+  padding: 16px 4px;
+}
+
+.related-products .card__heading {
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.related-products .card__heading a {
+  color: inherit;
+}
+
+.related-products .price {
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Footer status bar */
+.nailscene-related__statusbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-top: 1px solid #dfd1ef;
+  background: #f9f3ff;
+  font:
+    700 10px 'Space Mono',
+    monospace;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  product-recommendations.related-products {
+    width: calc(100% - 24px);
+    margin: 32px auto 64px;
+  }
+
+  .nailscene-related__body {
+    padding: 28px 16px 36px;
+  }
+
+  .related-products .product-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .nailscene-related__titlebar,
+  .nailscene-related__statusbar {
+    font-size: 9px;
+  }
+
+  .related-products .related-products__heading {
+    font-size: 26px;
+  }
+}

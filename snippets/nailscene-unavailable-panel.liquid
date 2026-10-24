@@ -1,0 +1,50 @@
+{% comment %}
+  NailScene unavailable product panel.
+  Only render when product.available == false.
+{% endcomment %}
+
+{% liquid
+  assign is_restocking = product.metafields.custom.restocking.value
+  assign restock_date = product.metafields.custom.restock_date.value
+
+  assign contact_url = pages.contact.url | default: '/pages/contact'
+  assign files_url = collections['scene-files'].url | default: '/collections/scene-files'
+%}
+
+{% unless product.available %}
+  <div class="nailscene-unavailable {% if is_restocking %}is-brb{% else %}is-offline{% endif %}">
+    {% if is_restocking %}
+      <h2 class="nailscene-unavailable__heading">RECONNECTING SOON.</h2>
+
+      <p class="nailscene-unavailable__description">This file is temporarily away while we prepare the next restock.</p>
+
+      {% if restock_date != blank %}
+        <p class="nailscene-unavailable__date">
+          <span>RESTOCK DATE</span>
+          <strong>{{ restock_date | date: '%b %d, %Y' }}</strong>
+        </p>
+      {% endif %}
+
+      <a
+        href="{{ contact_url }}"
+        class="nailscene-unavailable__button"
+      >
+        ASK ABOUT RESTOCK →
+      </a>
+
+    {% else %}
+      <h2 class="nailscene-unavailable__heading">THIS FILE IS OFFLINE.</h2>
+
+      <p class="nailscene-unavailable__description">
+        This set is unavailable for now. Explore the other files in the scene.
+      </p>
+
+      <a
+        href="{{ files_url }}"
+        class="nailscene-unavailable__button"
+      >
+        EXPLORE OTHER FILES →
+      </a>
+    {% endif %}
+  </div>
+{% endunless %}

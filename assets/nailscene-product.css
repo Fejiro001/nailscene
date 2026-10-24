@@ -371,6 +371,94 @@
   display: none;
 }
 
+/* ==========================================
+   NAILSCENE — UNAVAILABLE PRODUCT STATES
+   ========================================== */
+
+.nailscene-unavailable {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid #c0a8eb;
+  background: #faf6fd;
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Headline */
+.nailscene-unavailable__heading {
+  margin: 0 0 12px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* Supporting text */
+.nailscene-unavailable__description {
+  margin: 0;
+  color: #66518d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Restock date */
+.nailscene-unavailable__date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 14px 0;
+  border-top: 1px solid #dfd1ef;
+  color: #8067b1;
+  font-size: 11px;
+}
+
+.nailscene-unavailable__date strong {
+  color: #55437d;
+  font-weight: 700;
+}
+
+/* Action button */
+.nailscene-unavailable__button {
+  display: block;
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px 18px;
+  border: 1px solid #8966c6;
+  background: linear-gradient(180deg, #f5e8ff 0%, #d9b9f4 55%, #b997e7 100%);
+  box-shadow: 4px 4px 0 #55437d;
+  color: #55437d;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.nailscene-unavailable__button:hover {
+  transform: translateY(-2px);
+  color: #55437d;
+}
+
+.nailscene-unavailable__button:focus-visible {
+  outline: 2px solid #55437d;
+  outline-offset: 6px;
+}
+
+/* Make unavailable prices secondary */
+.nailscene-product--unavailable .price--large {
+  opacity: 0.75;
+  font-size: 1.7rem;
+}
+
+/* Slightly tighter spacing after status card */
+.nailscene-product--unavailable .product__description {
+  margin-top: 12px;
+}
+
 /* =====================================
    MOBILE
 ===================================== */
@@ -396,5 +484,15 @@
   .nailscene-product .product-form__input input[type='radio'] + label {
     min-width: 48px;
     padding: 10px 12px;
+  }
+
+  .nailscene-unavailable {
+    margin: 18px 0;
+    padding: 18px;
+  }
+
+  .nailscene-unavailable__button {
+    font-size: 10px;
+    padding: 14px;
   }
 }

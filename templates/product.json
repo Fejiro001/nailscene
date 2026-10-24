@@ -83,7 +83,7 @@
           "settings": {
             "heading": "SHIPPING",
             "icon": "none",
-            "content": "<p>Free pickup is available. Eligible orders may qualify for next-day delivery at $7 or same-day delivery at the price shown during checkout. Orders are processed in less than 24 hours.</p><p><a href=\"/pages/delivery\" title=\"/pages/delivery\">VIEW DELIVERY DETAILS ↗</a></p>",
+            "content": "<p><strong>FREE PICKUP OR $7 NEXT-DAY DELIVERY ✦</strong></p><p>Choose free pickup or standard next-day delivery through Trexity in eligible areas.</p><p>For Trexity deliveries, you'll receive a 4-digit PIN to present to your courier when collecting your package.</p><p><a href=\"/pages/delivery\" title=\"/pages/delivery\">VIEW DELIVERY DETAILS ↗</a></p>",
             "page": ""
           }
         }

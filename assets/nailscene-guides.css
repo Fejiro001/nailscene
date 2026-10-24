@@ -1,0 +1,443 @@
+/* NailScene / Application, Removal, Delivery guides */
+.nailscene-guide {
+  --ng-ink: #55437d;
+  --ng-border: #a58bd3;
+  --ng-soft: #e9dcfa;
+  --ng-bg: #fefaff;
+  padding: 58px 20px 92px;
+  background: #fcf6fe;
+  color: var(--ng-ink);
+  font-family: 'Space Mono', monospace;
+}
+.nailscene-guide *,
+.nailscene-guide *::before,
+.nailscene-guide *::after {
+  box-sizing: border-box;
+}
+.nailscene-guide__window {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  border: 1px solid #9271c9;
+  background: var(--ng-bg);
+  box-shadow: 6px 6px 0 #c0a8eb;
+}
+.nailscene-guide__titlebar,
+.nailscene-guide__statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 13px 18px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.nailscene-guide__titlebar {
+  background: linear-gradient(180deg, #fefaff 0%, #ddbbee 55%, #c0a8eb 100%);
+  border-bottom: 1px solid #9271c9;
+}
+.nailscene-guide__window-controls {
+  flex-shrink: 0;
+  letter-spacing: 0.15em;
+}
+.nailscene-guide__statusbar {
+  background: #f8f1fc;
+  border-top: 1px solid #dfd1ef;
+}
+.nailscene-guide__body {
+  padding: 34px 38px 44px;
+}
+.nailscene-guide__back,
+.nailscene-guide__text-link,
+.nailscene-guide__image-link {
+  color: #6b55ba;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.nailscene-guide__back {
+  display: inline-block;
+  margin-bottom: 26px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.nailscene-guide__intro {
+  max-width: 790px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+.nailscene-guide__eyebrow {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.nailscene-guide__intro h1 {
+  margin: 0 0 12px;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(30px, 4.6vw, 58px);
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--ng-ink);
+  text-transform: uppercase;
+}
+.nailscene-guide__subtitle {
+  color: #7d62a9;
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.nailscene-guide__description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.nailscene-guide__instructions {
+  border: 1px solid var(--ng-border);
+  background: #fff;
+}
+.nailscene-guide__instructions > h2,
+.nailscene-guide__panel-heading {
+  margin: 0;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ng-border);
+  background: #e7daf8;
+  color: var(--ng-ink);
+  font:
+    700 15px 'Space Mono',
+    monospace;
+}
+.nailscene-guide__step-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 12px 22px;
+  list-style: none;
+}
+.nailscene-guide__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  padding: 22px 15px;
+  border-bottom: 1px solid #e5d9f3;
+}
+.nailscene-guide__step:nth-child(odd) {
+  border-right: 1px solid #e5d9f3;
+}
+.nailscene-guide__number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #9777c7;
+  background: #e7d6f8;
+  border-radius: 50%;
+  font:
+    700 12px 'Space Mono',
+    monospace;
+}
+.nailscene-guide__step-content {
+  min-width: 0;
+}
+.nailscene-guide__step h3 {
+  margin: 0 0 7px;
+  color: var(--ng-ink);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+.nailscene-guide__step p {
+  margin: 0;
+  color: #66518d;
+  font-size: 12px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.nailscene-guide__visual {
+  margin-top: 30px;
+  border: 1px solid var(--ng-border);
+  background: #fff;
+}
+.nailscene-guide__panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.nailscene-guide__panel-heading h2 {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+.nailscene-guide__panel-heading span {
+  font-size: 10px;
+}
+.nailscene-guide__visual-body {
+  padding: 22px;
+  text-align: center;
+}
+.nailscene-guide__visual-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5d9f3;
+}
+.nailscene-guide__visual-body p {
+  margin: 15px 0 10px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.nailscene-guide__image-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+}
+.nailscene-guide__delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.nailscene-guide__delivery {
+  min-width: 0;
+  border: 1px solid var(--ng-border);
+  background: #fff;
+}
+.nailscene-guide__delivery-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 18px;
+  background: #e7daf8;
+  border-bottom: 1px solid var(--ng-border);
+  font-size: 12px;
+  font-weight: 700;
+}
+.nailscene-guide__delivery-main {
+  padding: 23px;
+}
+.nailscene-guide__mode {
+  margin: 0 0 15px;
+  color: #8067b1;
+  font-size: 10px;
+  font-weight: 700;
+}
+.nailscene-guide__cost {
+  margin: 0 0 18px;
+  color: var(--ng-ink);
+  font:
+    800 clamp(20px, 3vw, 30px) 'Oxanium',
+    sans-serif;
+}
+.nailscene-guide__delivery-text {
+  margin: 0;
+  color: #66518d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.nailscene-guide__notice {
+  margin-top: 30px;
+  padding: 24px;
+  border: 1px solid var(--ng-border);
+  background: #f0e7fb;
+}
+.nailscene-guide__notice h2 {
+  margin: 0 0 10px;
+  color: var(--ng-ink);
+  font:
+    700 13px 'Space Mono',
+    monospace;
+}
+.nailscene-guide__notice p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.85;
+}
+.nailscene-guide__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin: 32px 0 4px;
+}
+.nailscene-guide__primary-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid #8966c6;
+  background: linear-gradient(180deg, #f5e8ff, #d9b9f4 55%, #b997e7);
+  box-shadow: 4px 4px 0 #55437d;
+  color: var(--ng-ink);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+}
+.nailscene-guide__text-link {
+  font-size: 11px;
+  font-weight: 700;
+}
+.nailscene-guide a:focus-visible {
+  outline: 2px solid #55437d;
+  outline-offset: 5px;
+}
+.nailscene-guide__primary-link:hover {
+  color: #55437d;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   NAILSCENE — APPLICATION WEAR TIME
+   ======================================== */
+
+.nailscene-guide__wear-time {
+  margin: 36px 0;
+  padding: 28px;
+  border: 1px solid #c0a8eb;
+  background: #fefaff;
+  color: #55437d;
+}
+
+.nailscene-guide__wear-heading {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.nailscene-guide__wear-heading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #8067b1;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.nailscene-guide__wear-heading h2 {
+  margin: 0 0 12px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.nailscene-guide__wear-heading p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.nailscene-guide__wear-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.nailscene-guide__wear-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid #b99bdd;
+  background: #f5edfc;
+}
+
+.nailscene-guide__wear-label {
+  color: #8067b1;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.nailscene-guide__wear-duration {
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.nailscene-guide__wear-card p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.nailscene-guide__wear-note {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #dfd1ef;
+  color: #8067b1;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+@media (max-width: 749px) {
+  .nailscene-guide {
+    padding: 30px 12px 64px;
+  }
+  .nailscene-guide__body {
+    padding: 24px 15px 34px;
+  }
+  .nailscene-guide__intro {
+    margin-bottom: 28px;
+  }
+  .nailscene-guide__intro h1 {
+    font-size: clamp(29px, 8vw, 42px);
+  }
+  .nailscene-guide__step-grid,
+  .nailscene-guide__delivery-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .nailscene-guide__step-grid {
+    padding: 6px 15px;
+  }
+  .nailscene-guide__step {
+    padding: 18px 0;
+  }
+  .nailscene-guide__step:nth-child(odd) {
+    border-right: 0;
+  }
+  .nailscene-guide__step:last-child {
+    border-bottom: 0;
+  }
+  .nailscene-guide__visual-body {
+    padding: 12px;
+  }
+  .nailscene-guide__delivery-grid {
+    gap: 16px;
+  }
+  .nailscene-guide__notice {
+    padding: 18px;
+  }
+  .nailscene-guide__titlebar,
+  .nailscene-guide__statusbar {
+    font-size: 9px;
+    padding: 11px 12px;
+  }
+  .nailscene-guide__next {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nailscene-guide__primary-link {
+    width: 100%;
+  }
+  .nailscene-guide__wear-time {
+    padding: 18px;
+    margin: 24px 0;
+  }
+  .nailscene-guide__wear-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .nailscene-guide__wear-card {
+    padding: 18px;
+  }
+}

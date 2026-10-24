@@ -1,0 +1,230 @@
+{{ 'nailscene-guides.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign guide_kind = section.settings.guide_kind
+  assign files_url = collections['scene-files'].url | default: '/collections/scene-files'
+  assign graphic_asset = 'nailscene-application-guide.png'
+  if guide_kind == 'removal'
+    assign graphic_asset = 'nailscene-removal-guide.png'
+  endif
+
+  if section.settings.guide_image != blank
+    assign guide_image_url = section.settings.guide_image | image_url: width: 2000
+  else
+    assign guide_image_url = graphic_asset | asset_url
+  endif
+%}
+
+<section
+  class="nailscene-guide nailscene-guide--{{ guide_kind }}"
+  aria-labelledby="nailscene-guide-heading-{{ section.id }}"
+>
+  <div class="nailscene-guide__window">
+    <div class="nailscene-guide__titlebar">
+      <span>✦ NAILSCENE.EXE / {{ section.settings.window_label | escape }}</span>
+      <span class="nailscene-guide__window-controls" aria-hidden="true">─ □ ×</span>
+    </div>
+
+    <div class="nailscene-guide__body">
+      <a class="nailscene-guide__back" href="{{ files_url }}">← BACK TO SCENE FILES</a>
+      <header class="nailscene-guide__intro">
+        <p class="nailscene-guide__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h1 id="nailscene-guide-heading-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+        <p class="nailscene-guide__subtitle">{{ section.settings.subtitle | escape }}</p>
+        <p class="nailscene-guide__description">{{ section.settings.introduction | escape | newline_to_br }}</p>
+      </header>
+
+      {% if guide_kind == 'delivery' %}
+        <div class="nailscene-guide__delivery-grid" aria-label="NailScene delivery methods and preparation time">
+          {% for block in section.blocks %}
+            {% if block.type == 'delivery_option' %}
+              <article class="nailscene-guide__delivery" {{ block.shopify_attributes }}>
+                <div class="nailscene-guide__delivery-top">
+                  <span>{{ block.settings.number | escape }} // {{ block.settings.title | escape }}</span>
+                  <span aria-hidden="true">✦</span>
+                </div>
+                <div class="nailscene-guide__delivery-main">
+                  <p class="nailscene-guide__mode">{{ block.settings.mode | escape }}</p>
+                  <p class="nailscene-guide__cost">{{ block.settings.cost | escape }}</p>
+                  <p class="nailscene-guide__delivery-text">{{ block.settings.description | escape }}</p>
+                </div>
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <section class="nailscene-guide__instructions" aria-label="Step-by-step instructions">
+          <h2>
+            HOW TO {% if guide_kind == 'removal' %}REMOVE{% else %}APPLY{% endif %}
+          </h2>
+          <ol class="nailscene-guide__step-grid">
+            {% for block in section.blocks %}
+              {% if block.type == 'step' %}
+                <li class="nailscene-guide__step" {{ block.shopify_attributes }}>
+                  <span class="nailscene-guide__number" aria-hidden="true">{{ block.settings.number | escape }}</span>
+                  <div class="nailscene-guide__step-content">
+                    <h3>{{ block.settings.title | escape }}</h3>
+                    <p>{{ block.settings.description | escape }}</p>
+                  </div>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </section>
+
+        {% if guide_kind == 'application' %}
+          <section class="nailscene-guide__wear-time" aria-labelledby="wear-time-heading-{{ section.id }}">
+            <div class="nailscene-guide__wear-heading">
+              <span>✦ NAILSCENE.EXE / WEAR TIME</span>
+              <h2 id="wear-time-heading-{{ section.id }}">HOW LONG WILL YOUR SET LAST?</h2>
+              <p>With proper preparation, here's what you can typically expect.</p>
+            </div>
+
+            <div class="nailscene-guide__wear-grid">
+              <div class="nailscene-guide__wear-card">
+                <span class="nailscene-guide__wear-label">FILE_001 // NAIL GLUE</span>
+                <strong class="nailscene-guide__wear-duration">2–3 WEEKS</strong>
+                <p>Typical wear time with proper nail preparation and application.</p>
+              </div>
+
+              <div class="nailscene-guide__wear-card">
+                <span class="nailscene-guide__wear-label">FILE_002 // ADHESIVE TABS</span>
+                <strong class="nailscene-guide__wear-duration">UP TO 1 WEEK</strong>
+                <p>Typical wear time with proper preparation and application.</p>
+              </div>
+            </div>
+
+            <p class="nailscene-guide__wear-note">
+              ✦ Actual wear time varies depending on preparation, application, daily activities, and exposure to water.
+            </p>
+          </section>
+        {% endif %}
+
+        <section class="nailscene-guide__visual" aria-labelledby="nailscene-visual-heading-{{ section.id }}">
+          <div class="nailscene-guide__panel-heading">
+            <h2 id="nailscene-visual-heading-{{ section.id }}">{{ section.settings.visual_heading | escape }}</h2>
+            <span>GRAPHIC FILE ✦</span>
+          </div>
+          <div class="nailscene-guide__visual-body">
+            <img
+              src="{{ guide_image_url }}"
+              width="1050"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              alt="{{ section.settings.image_alt | escape }}"
+            >
+            <p>Need a closer look? Open the original guide image in a new tab.</p>
+            <a
+              class="nailscene-guide__image-link"
+              href="{{ guide_image_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW FULL-SIZE GRAPHIC ↗
+            </a>
+          </div>
+        </section>
+      {% endif %}
+
+      <aside class="nailscene-guide__notice" aria-label="{{ section.settings.note_heading | escape }}">
+        <h2>{{ section.settings.note_heading | escape }}</h2>
+        <p>{{ section.settings.note_body | escape | newline_to_br }}</p>
+      </aside>
+
+      <div class="nailscene-guide__next">
+        <a class="nailscene-guide__primary-link" href="{{ files_url }}">EXPLORE SCENE FILES →</a>
+        {% if guide_kind == 'application' %}
+          <a class="nailscene-guide__text-link" href="/pages/removal-guide">NEXT FILE: REMOVAL GUIDE ↗</a>
+        {% elsif guide_kind == 'removal' %}
+          <a class="nailscene-guide__text-link" href="/pages/application-guide">BACK TO APPLICATION GUIDE ↗</a>
+        {% else %}
+          <a class="nailscene-guide__text-link" href="/pages/contact">QUESTIONS? CONTACT NAILSCENE ↗</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="nailscene-guide__statusbar">
+      <span>NAILSCENE.EXE // {{ section.settings.window_label | escape }}</span>
+      <span>{{ section.settings.footer_status | escape }}</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene Guides",
+  "settings": [
+    {
+      "type": "select",
+      "id": "guide_kind",
+      "label": "Guide type",
+      "options": [
+        { "value": "application", "label": "Application" },
+        { "value": "removal", "label": "Removal" },
+        { "value": "delivery", "label": "Delivery" }
+      ],
+      "default": "application"
+    },
+    { "type": "text", "id": "window_label", "label": "Window label", "default": "APPLICATION FILE" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NAILSCENE.EXE // FILE OPEN" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "HOW TO APPLY" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "INSTALL YOUR SET // YOUR SCENE STARTS HERE" },
+    {
+      "type": "textarea",
+      "id": "introduction",
+      "label": "Introduction",
+      "default": "Follow the instructions for your NailScene press-on nails."
+    },
+    { "type": "image_picker", "id": "guide_image", "label": "Override guide graphic" },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Illustrated NailScene press-on nail guide"
+    },
+    { "type": "text", "id": "visual_heading", "label": "Graphic heading", "default": "VISUAL GUIDE" },
+    { "type": "text", "id": "note_heading", "label": "Note heading", "default": "PRO TIP // BEFORE YOU BEGIN" },
+    {
+      "type": "textarea",
+      "id": "note_body",
+      "label": "Note body",
+      "default": "Read the instructions carefully before getting started."
+    },
+    { "type": "text", "id": "footer_status", "label": "Footer status", "default": "FILE READY ✦" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Guide step",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Step number", "default": "01" },
+        { "type": "text", "id": "title", "label": "Step title", "default": "PREP" },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Instructions",
+          "default": "Enter the instructions for this step."
+        }
+      ]
+    },
+    {
+      "type": "delivery_option",
+      "name": "Delivery option",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Card number", "default": "01" },
+        { "type": "text", "id": "title", "label": "Title", "default": "PICKUP" },
+        { "type": "text", "id": "mode", "label": "System label", "default": "DELIVERY MODE: PICKUP" },
+        { "type": "text", "id": "cost", "label": "Price or timeline", "default": "FREE" },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Details",
+          "default": "Enter details about this delivery method."
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NailScene Guides" }]
+}
+{% endschema %}

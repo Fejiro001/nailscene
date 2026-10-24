@@ -7,10 +7,10 @@
         "window_label": "DELIVERY FILE",
         "eyebrow": "DELIVERY.EXE // SHIPPING FILE",
         "heading": "DELIVERY & PICKUP",
-        "subtitle": "YOUR SET IS GETTING READY TO ENTER YOUR SCENE",
-        "introduction": "Every order goes through our preparation process before it is ready for pickup or delivery. Choose the delivery method that works best for you at checkout.",
+        "subtitle": "YOUR SET IS GETTING READY TO ENTER YOUR SCENE ✦",
+        "introduction": "Every NailScene order goes through our preparation process before it's ready for pickup or delivery. Choose the option that works best for you at checkout.",
         "note_heading": "BEFORE YOU CHECK OUT ✦",
-        "note_body": "Please review your selected delivery method, any applicable delivery fee, and the pickup or delivery instructions before completing your order. Same-day and next-day delivery are available only where eligible.",
+        "note_body": "Confirm your delivery address, contact number, and selected delivery method before completing your order.",
         "footer_status": "DELIVERY FILE COMPLETE ✦"
       },
       "blocks": {
@@ -21,49 +21,42 @@
             "title": "PROCESSING TIME",
             "mode": "STATUS: PREPARING FILE...",
             "cost": "UNDER 24 HOURS",
-            "description": "Orders are processed in less than 24 hours."
+            "description": "Orders are typically processed within 24 hours."
           }
         },
         "item2": {
           "type": "delivery_option",
           "settings": {
             "number": "02",
-            "title": "PICKUP",
+            "title": "FREE PICKUP",
             "mode": "DELIVERY MODE: PICKUP",
             "cost": "FREE",
-            "description": "Prefer to collect your order? Choose pickup at checkout and follow the instructions provided to arrange collection."
+            "description": "Prefer to collect your order? Select Pickup at checkout and follow the instructions provided to arrange collection."
           }
         },
         "item3": {
           "type": "delivery_option",
           "settings": {
             "number": "03",
-            "title": "STANDARD DELIVERY",
+            "title": "STANDARD NEXT-DAY DELIVERY",
             "mode": "DELIVERY MODE: NEXT DAY",
-            "cost": "$7",
-            "description": "Standard next-day delivery is available for $7 in eligible delivery areas.\n\nSECURE DELIVERY // PIN VERIFICATION ✦\n\nYou'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package.\n\nPlease ensure someone is available to receive your order, as packages cannot be left unattended without PIN verification."
-          }
-        },
-        "item4": {
-          "type": "delivery_option",
-          "settings": {
-            "number": "04",
-            "title": "SAME-DAY DELIVERY",
-            "mode": "DELIVERY MODE: PRIORITY",
-            "cost": "SEE CHECKOUT",
-            "description": "Need your nails today? Trexity same-day delivery is available for eligible orders and delivery locations. The delivery fee will be shown at checkout.\n\nSECURE DELIVERY // PIN VERIFICATION ✦\n\nYou'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package.\n\nPlease ensure someone is available to receive your order."
+            "cost": "$7 CAD",
+            "description": "Get your NailScene order delivered by Trexity for $7 in eligible delivery areas. Delivery is scheduled according to Trexity's next-day service availability and order preparation times.\n\nSECURE DELIVERY // PIN VERIFICATION ✦\n\nYou'll receive a 4-digit delivery PIN to provide to your Trexity courier in person before collecting your package.\n\nPlease ensure someone is available to receive your order, as packages cannot be collected without a PIN."
           }
         }
+        // "item4": {
+        //   "type": "delivery_option",
+        //   "settings": {
+        //     "number": "04",
+        //     "title": "SAME-DAY DELIVERY",
+        //     "mode": "DELIVERY MODE: PRIORITY",
+        //     "cost": "SEE CHECKOUT",
+        //     "description": "Need your nails today? Trexity same-day delivery is available for eligible orders and delivery locations. The delivery fee will be shown at checkout.\n\nSECURE DELIVERY // PIN VERIFICATION ✦\n\nYou'll receive a 4-digit delivery PIN to present to your Trexity courier in person before collecting your package.\n\nPlease ensure someone is available to receive your order."
+        //   }
+        // }
       },
-      "block_order": [
-        "item1",
-        "item2",
-        "item3",
-        "item4"
-      ]
+      "block_order": ["item1", "item2", "item3"]
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main"]
 }

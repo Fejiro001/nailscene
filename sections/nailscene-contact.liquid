@@ -1,0 +1,148 @@
+{{ 'nailscene-contact.css' | asset_url | stylesheet_tag }}
+
+<section class="nailscene-contact">
+  <div class="nailscene-contact__window">
+    <div class="nailscene-contact__titlebar">
+      <span>✦ NAILSCENE.EXE / CONTACT</span>
+      <span aria-hidden="true">─ □ ×</span>
+    </div>
+
+    <div class="nailscene-contact__body">
+      <div class="nailscene-contact__heading">
+        <p class="nailscene-contact__eyebrow">CONNECTION REQUEST // FILE_000</p>
+
+        <h1>{{ section.settings.heading | escape }}</h1>
+
+        <p class="nailscene-contact__intro">
+          {{ section.settings.description | escape }}
+        </p>
+      </div>
+
+      {% form 'contact', id: 'NailSceneContactForm', class: 'nailscene-contact__form' %}
+        {% if form.posted_successfully? %}
+          <div
+            class="nailscene-contact__message is-success"
+            role="status"
+            tabindex="-1"
+          >
+            <strong>MESSAGE SENT ✦</strong>
+            <p>Your message has been received. Thank you for reaching out to NailScene.</p>
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div
+            class="nailscene-contact__message is-error"
+            role="alert"
+            tabindex="-1"
+          >
+            <strong>MESSAGE NOT SENT</strong>
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="nailscene-contact__field">
+          <label for="NailSceneContact-name">
+            YOUR NAME
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <input
+            id="NailSceneContact-name"
+            type="text"
+            name="contact[name]"
+            value="{{ form.name | escape }}"
+            placeholder="Enter your name"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="nailscene-contact__field">
+          <label for="NailSceneContact-email">
+            EMAIL ADDRESS
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <input
+            id="NailSceneContact-email"
+            type="email"
+            name="contact[email]"
+            value="{{ form.email | escape }}"
+            placeholder="you@example.com"
+            autocomplete="email"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="NailSceneContact-email-error"
+            {% endif %}
+            required
+          >
+
+          {% if form.errors contains 'email' %}
+            <small
+              id="NailSceneContact-email-error"
+              class="nailscene-contact__field-error"
+            >
+              {{ form.errors.messages.email }}
+            </small>
+          {% endif %}
+        </div>
+
+        <div class="nailscene-contact__field">
+          <label for="NailSceneContact-message">
+            YOUR MESSAGE
+            <span aria-hidden="true">*</span>
+          </label>
+
+          <textarea
+            id="NailSceneContact-message"
+            name="contact[body]"
+            rows="7"
+            placeholder="Type your message here..."
+            required
+          >{{ form.body | escape }}</textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="nailscene-contact__submit"
+        >
+          SEND MESSAGE ✦
+        </button>
+
+        <p class="nailscene-contact__note">REQUIRED FIELDS ARE MARKED WITH *</p>
+      {% endform %}
+    </div>
+
+    <div class="nailscene-contact__statusbar">
+      <span>NAILSCENE.EXE / MESSAGE SYSTEM</span>
+      <span>CONNECTION OPEN ✦</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NailScene Contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "DROP US A MESSAGE"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Questions about your order, sizing, or a nail set? We're here to help."
+    }
+  ],
+  "presets": [
+    {
+      "name": "NailScene Contact"
+    }
+  ]
+}
+{% endschema %}

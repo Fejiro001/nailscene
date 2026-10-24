@@ -1,0 +1,214 @@
+/* =====================================
+   NAILSCENE — CONTACT PAGE
+   ===================================== */
+
+.nailscene-contact {
+  padding: 64px 24px 96px;
+  background: #fcf6fe;
+  color: #55437d;
+  font-family: 'Space Mono', monospace;
+}
+
+.nailscene-contact__window {
+  max-width: 850px;
+  margin-inline: auto;
+  border: 1px solid #8966c6;
+  background: #fefaff;
+  box-shadow: 6px 6px 0 #c0a8eb;
+}
+
+.nailscene-contact__titlebar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #8966c6;
+  background: linear-gradient(180deg, #fefaff, #ddbbee 55%, #c0a8eb);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nailscene-contact__body {
+  padding: 48px;
+}
+
+.nailscene-contact__heading {
+  margin-bottom: 36px;
+}
+
+.nailscene-contact__eyebrow {
+  margin: 0 0 14px;
+  color: #8067b1;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+}
+
+.nailscene-contact__heading h1 {
+  margin: 0 0 18px;
+  color: #55437d;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.nailscene-contact__intro {
+  max-width: 56ch;
+  margin: 0;
+  color: #66518d;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.nailscene-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nailscene-contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nailscene-contact__field label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nailscene-contact__field label span {
+  color: #8665c1;
+}
+
+.nailscene-contact__field input,
+.nailscene-contact__field textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #c0a8eb;
+  border-radius: 0;
+  background: #ffffff;
+  color: #55437d;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.nailscene-contact__field textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.nailscene-contact__field input::placeholder,
+.nailscene-contact__field textarea::placeholder {
+  color: #9582b1;
+  opacity: 1;
+}
+
+.nailscene-contact__field input:focus,
+.nailscene-contact__field textarea:focus {
+  outline: 2px solid #8966c6;
+  outline-offset: 2px;
+  border-color: #8966c6;
+}
+
+.nailscene-contact__submit {
+  width: 100%;
+  min-height: 56px;
+  padding: 16px 22px;
+  border: 1px solid #8966c6;
+  border-radius: 0;
+  background: linear-gradient(180deg, #f5e8ff, #d9b9f4 55%, #b997e7);
+  color: #55437d;
+  box-shadow: 4px 4px 0 #55437d;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.nailscene-contact__submit:hover {
+  background: linear-gradient(180deg, #ffffff, #e3cdf6 55%, #c5a6ea);
+}
+
+.nailscene-contact__submit:focus-visible {
+  outline: 2px solid #55437d;
+  outline-offset: 6px;
+}
+
+.nailscene-contact__note {
+  margin: -8px 0 0;
+  color: #8067b1;
+  font-size: 10px;
+  text-align: center;
+}
+
+.nailscene-contact__message {
+  padding: 18px;
+  border: 1px solid #c0a8eb;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.nailscene-contact__message p {
+  margin: 8px 0 0;
+}
+
+.nailscene-contact__message.is-success {
+  background: #f2f9f4;
+  color: #386b4d;
+  border-color: #96c5a4;
+}
+
+.nailscene-contact__message.is-error {
+  background: #fff4f7;
+  color: #92445b;
+  border-color: #dfa6b6;
+}
+
+.nailscene-contact__field-error {
+  color: #92445b;
+  font-size: 11px;
+}
+
+.nailscene-contact__statusbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-top: 1px solid #c0a8eb;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 749px) {
+  .nailscene-contact {
+    padding: 32px 12px 64px;
+  }
+
+  .nailscene-contact__body {
+    padding: 32px 18px;
+  }
+
+  .nailscene-contact__titlebar,
+  .nailscene-contact__statusbar {
+    font-size: 9px;
+  }
+
+  .nailscene-contact__heading {
+    margin-bottom: 28px;
+  }
+
+  .nailscene-contact__statusbar {
+    flex-wrap: wrap;
+  }
+}

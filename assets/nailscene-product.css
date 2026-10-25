@@ -88,6 +88,17 @@
   margin-top: 0;
 }
 
+.nailscene-product .product__description .free-kit{
+  color: #fbf6ff;
+  background: #55437d;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  display: inline-block;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+}
+
 /* =====================================
    PRODUCT GALLERY
 ===================================== */

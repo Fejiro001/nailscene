@@ -92,7 +92,7 @@
 
   updateProgress(0);
 
-  animateProgress(0, 90, reducedMotion ? 0 : 3000, () => {
+  animateProgress(0, 90, reducedMotion ? 0 : 2000, () => {
     reached90 = true;
 
     if (pageLoaded) {

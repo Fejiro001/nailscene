@@ -48,6 +48,10 @@
         data-nailscene-file="{{ nailscene_file_label | escape }}"
       {% endif %}
     >
+      {% if nailscene_file_label != blank %}
+        {% render 'nailscene-window-controls' %}
+      {% endif %}
+
       <div
         class="
           card card--{{ settings.card_style }}

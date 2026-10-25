@@ -34,7 +34,7 @@
         <div class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <div class="nailscene-related__titlebar">
             <span>✦ NAILSCENE.EXE / RECOMMENDED FILES</span>
-            <span aria-hidden="true">🗕 🗖 ✖</span>
+            {% render 'nailscene-window-controls' %}
           </div>
 
           <div class="nailscene-related__body">

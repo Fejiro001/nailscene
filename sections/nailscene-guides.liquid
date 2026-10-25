@@ -22,7 +22,7 @@
   <div class="nailscene-guide__window">
     <div class="nailscene-guide__titlebar">
       <span>✦ NAILSCENE.EXE / {{ section.settings.window_label | escape }}</span>
-      <span class="nailscene-guide__window-controls" aria-hidden="true">🗕 🗖 ✖</span>
+      {% render 'nailscene-window-controls' %}
     </div>
 
     <div class="nailscene-guide__body">
@@ -46,7 +46,9 @@
                 <div class="nailscene-guide__delivery-main">
                   <p class="nailscene-guide__mode">{{ block.settings.mode | escape }}</p>
                   <p class="nailscene-guide__cost">{{ block.settings.cost | escape }}</p>
-                  <p class="nailscene-guide__delivery-text">{{ block.settings.description | escape | newline_to_br }}</p>
+                  <p class="nailscene-guide__delivery-text">
+                    {{ block.settings.description | escape | newline_to_br }}
+                  </p>
                 </div>
               </article>
             {% endif %}

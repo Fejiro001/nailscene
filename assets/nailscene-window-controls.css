@@ -1,0 +1,58 @@
+/* Retro window controls */
+.nailscene-window-controls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.nailscene-window-btn {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #55437d;
+  background: #e9dcfa;
+  border-radius: 2px;
+}
+
+/* Minimize */
+.nailscene-window-btn--minimize::before {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 1.5px;
+  background: #55437d;
+  left: 4px;
+  bottom: 4px;
+}
+
+/* Maximize */
+.nailscene-window-btn--maximize::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid #55437d;
+  border-top-width: 3px;
+}
+
+/* Close */
+.nailscene-window-btn--close::before,
+.nailscene-window-btn--close::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 1.6px;
+  background: #55437d;
+  top: 7px;
+  left: 3px;
+}
+
+.nailscene-window-btn--close::before {
+  transform: rotate(45deg);
+}
+
+.nailscene-window-btn--close::after {
+  transform: rotate(-45deg);
+}

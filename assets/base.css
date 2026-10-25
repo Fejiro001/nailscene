@@ -20,6 +20,42 @@ collection-component {
     0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
+/* ========================================
+   NAILSCENE — CUSTOM SCROLLBAR
+   ======================================== */
+
+:root {
+  --nail-scrollbar-track: #fefaff;
+  --nail-scrollbar-thumb: #c0a8eb;
+  --nail-scrollbar-hover: var(--nail-border);
+}
+
+/* Reserve scrollbar space to prevent layout shifts */
+html {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nail-scrollbar-thumb) var(--nail-scrollbar-track);
+}
+
+/* WebKit scrollbar styling (fallback) */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--nail-scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--nail-scrollbar-thumb);
+  border: 2px solid var(--nail-scrollbar-track);
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--nail-scrollbar-hover);
+}
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);

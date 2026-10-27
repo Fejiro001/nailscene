@@ -159,6 +159,55 @@ cart-items .quantity::after {
   padding-bottom: 64px;
 }
 
+/* ========================================
+   NAILSCENE — EMPTY CART FIX
+   ======================================== */
+/* Empty cart spacing */
+cart-items.is-empty {
+  padding-top: 36px;
+  padding-bottom: 64px;
+}
+
+/* Give the empty cart window more height */
+cart-items.is-empty > .page-width {
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(420px, 55vh, 600px);
+  border-bottom: 1px solid var(--scene-border);
+}
+
+/* Center the empty-state content */
+cart-items.is-empty .cart__warnings {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 0;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+cart-items.is-empty .cart__empty-text {
+  margin: 0 0 28px;
+}
+
+/* Remove the empty checkout footer entirely */
+#main-cart-footer.is-empty {
+  display: none !important;
+}
+
+/* Also hide its section wrapper */
+.cart__footer-wrapper:has(#main-cart-footer.is-empty) {
+  display: none;
+}
+
+/* Maintain space before the site footer */
+cart-items.is-empty {
+  padding-bottom: 64px;
+}
+
 /* Mobile */
 @media screen and (max-width: 749px) {
   cart-items > .page-width,
@@ -184,6 +233,23 @@ cart-items .quantity::after {
   }
 
   #main-cart-footer {
+    padding-bottom: 40px;
+  }
+
+  cart-items.is-empty {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+
+  cart-items.is-empty > .page-width {
+    min-height: 350px;
+  }
+
+  cart-items.is-empty .cart__warnings {
+    padding: 40px 16px;
+  }
+
+  cart-items.is-empty {
     padding-bottom: 40px;
   }
 }

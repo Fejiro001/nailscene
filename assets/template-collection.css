@@ -97,3 +97,80 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+/* Scene Files — grouped folder layout */
+.nailscene-folder {
+  padding: 20px 10px 44px;
+  border-bottom: 1px solid #c0a8eb;
+}
+
+.nailscene-folder__heading {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #55437d;
+}
+
+.nailscene-folder__heading p,
+.nailscene-folder__heading span {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.nailscene-folder__heading h2 {
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 800;
+  margin: 0;
+}
+
+.nailscene-folder__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.nailscene-folder__grid > .grid__item {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+/* Make the product image area shorter */
+.nailscene-folder__grid .card__inner.ratio {
+  --ratio-percent: 72% !important;
+}
+
+/* Keep the full nail design visible */
+.nailscene-folder__grid .card__media img {
+  object-fit: contain;
+}
+
+/* Reduce spacing in the product information area */
+.nailscene-folder__grid .card__information {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Keep the folder headings closer to the cards */
+.nailscene-folder__heading {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 749px) {
+  .nailscene-folder {
+    padding: 24px 12px 36px;
+  }
+
+  .nailscene-folder__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .nailscene-folder__grid {
+    grid-template-columns: 1fr;
+  }
+}

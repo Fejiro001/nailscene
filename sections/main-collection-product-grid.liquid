@@ -42,12 +42,11 @@
 >
   <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
     {% liquid
-      assign folder_title = collection.metafields.custom.folder_title.value
-
-      if folder_title == blank
-        if collection.handle == 'scene-files'
-          assign folder_title = 'SCENE_001 // THE FIRST FOLDER'
-        else
+      if collection.handle == 'scene-files'
+        assign folder_title = collection.title
+      else
+        assign folder_title = collection.metafields.custom.folder_title.value
+        if folder_title == blank
           assign folder_title = collection.title
         endif
       endif
@@ -59,21 +58,23 @@
         {% render 'nailscene-window-controls' %}
       </div>
 
-      <div class="nailscene-directory__heading">
-        <p>CURRENT SCENE</p>
+      {% unless collection.handle == 'scene-files' and section.settings.scene_folders != blank %}
+        <div class="nailscene-directory__heading">
+          <p>CURRENT SCENE</p>
 
-        <h2>{{ folder_title | escape }}</h2>
+          <h2>{{ folder_title | escape }}</h2>
 
-        <span>
-          {{ collection.all_products_count }}
-          {% if collection.all_products_count == 1 %}
-            FILE
-          {% else %}
-            FILES
-          {% endif %}
-          DETECTED
-        </span>
-      </div>
+          <span>
+            {{ collection.all_products_count }}
+            {% if collection.all_products_count == 1 %}
+              FILE
+            {% else %}
+              FILES
+            {% endif %}
+            DETECTED
+          </span>
+        </div>
+      {% endunless %}
 
       <div class="nailscene-directory__body">
         {%- paginate collection.products by section.settings.products_per_page -%}
@@ -182,6 +183,68 @@
                   class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
                 >
                   <div class="loading-overlay gradient"></div>
+                  {% if collection.handle == 'scene-files' and section.settings.scene_folders != blank %}
+                    <div id="product-grid" data-id="{{ section.id }}" class="nailscene-folder-directory">
+                      {% assign skip_card_product_styles = false %}
+                      {% for folder in section.settings.scene_folders %}
+                        {% assign folder_count = 0 %}
+                        {% capture folder_cards %}
+                          {% for product in collection.products %}
+                            {% assign belongs_to_folder = false %}
+                            {% for product_collection in product.collections %}
+                              {% if product_collection.id == folder.id %}
+                                {% assign belongs_to_folder = true %}
+                                {% break %}
+                              {% endif %}
+                            {% endfor %}
+
+                            {% if belongs_to_folder %}
+                              {% assign folder_count = folder_count | plus: 1 %}
+                              {% assign file_label = product.metafields.custom.file_label.value %}
+                              {% if file_label == blank %}
+                                {% capture file_label %}FILE_{% if folder_count < 10 %}00{% elsif folder_count < 100 %}0{% endif %}{{ folder_count }}{% endcapture %}
+                              {% endif %}
+
+                              <li class="grid__item">
+                                {% render 'card-product',
+                                  card_product: product,
+                                  nailscene_file_label: file_label,
+                                  media_aspect_ratio: section.settings.image_ratio,
+                                  image_shape: section.settings.image_shape,
+                                  show_secondary_image: section.settings.show_secondary_image,
+                                  show_vendor: section.settings.show_vendor,
+                                  show_rating: section.settings.show_rating,
+                                  lazy_load: true,
+                                  skip_styles: skip_card_product_styles,
+                                  quick_add: section.settings.quick_add,
+                                  section_id: section.id,
+                                  product_view_context: 'collection'
+                                %}
+                              </li>
+                              {% assign skip_card_product_styles = true %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endcapture %}
+
+                        {% if folder_count > 0 %}
+                          <section class="nailscene-folder">
+                            <div class="nailscene-folder__heading">
+                              <p>FOLDER_{{ forloop.index | prepend: '00' | slice: -3, 3 }}</p>
+                              <h2>{{ folder.metafields.custom.folder_title.value | default: folder.title | escape }}</h2>
+                              <span>
+                                {{ folder_count }}
+                                {% if folder_count == 1 %}FILE{% else %}FILES{% endif %}
+                                DETECTED
+                              </span>
+                            </div>
+                            <ul class="grid product-grid nailscene-folder__grid">
+                              {{ folder_cards }}
+                            </ul>
+                          </section>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% else %}
                   <ul
                     id="product-grid"
                     data-id="{{ section.id }}"
@@ -226,6 +289,7 @@
                       {%- assign skip_card_product_styles = true -%}
                     {%- endfor -%}
                   </ul>
+                  {% endif %}
 
                   {%- if paginate.pages > 1 -%}
                     {% render 'pagination', paginate: paginate, anchor: '' %}
@@ -254,6 +318,12 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "collection_list",
+      "id": "scene_folders",
+      "label": "Scene Files folders",
+      "limit": 24
+    },
     {
       "type": "range",
       "id": "products_per_page",

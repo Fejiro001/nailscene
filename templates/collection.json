@@ -18,6 +18,10 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "scene_folders": [
+          "scene-001",
+          "scary_001"
+        ],
         "products_per_page": 12,
         "columns_desktop": 3,
         "columns_mobile": "2",
@@ -36,5 +40,8 @@
       }
     }
   },
-  "order": ["nailscene_header", "product-grid"]
+  "order": [
+    "nailscene_header",
+    "product-grid"
+  ]
 }
